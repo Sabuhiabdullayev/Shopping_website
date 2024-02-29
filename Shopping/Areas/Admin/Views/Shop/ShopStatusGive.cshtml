@@ -1,0 +1,54 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "ShopStatusGive";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<h4>Mağazaya Status Verme</h4>
+<br />
+<table class="table table-bordered">
+	<tr>
+		<th>Mağaza Nömrəsi</th>
+		<th>Şəkil</th>
+		<th>Mağaza Adı</th>
+		<th>Mağaza Status</th>
+		<th>Telefon</th>
+		<th>Mağaza Tarixi</th>
+		<th> Mağazadakı Elan Sayısı</th>
+		<th> Mağazaya Göz At</th>
+	</tr>
+	<tr>
+		<th>@Model.Id</th>
+		<th><img src="~/Shopping/ShopSmallImg/@Model.ShopSmallImage" style="width:100px"/></th>
+		<th>@Model.ShopName</th>
+		<th>@Model.ShopConfirmed</th>
+		<th>@Model.ShopPhone</th>
+		<th>@(((DateTime)Model.ShopDate).ToString("dd-MMM-yyyy"))</th>
+		<th> @await Component.InvokeAsync("_ShopListProductCount",new{id=@Model.Id}) </th>
+		<th><a href="/Shop/InShop/@Model.Id/" class="btn btn-outline-info">Göz At</a> </th>
+	</tr>
+</table>
+<br />
+<form asp-action="ShopStatusGiveUpdate" asp-controller="Shop" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="ShopId" value="@Model.Id" />
+	<input type="hidden" name="ShopConfirmed" value="Yoxlanılır" />
+	<button class="btn btn-outline-info form-control">Yoxlanılır</button>
+</div>
+</form>
+<form asp-action="ShopStatusGiveUpdate" asp-controller="Shop" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="ShopId" value="@Model.Id" />
+	<input type="hidden" name="ShopConfirmed" value="Təsdiqləndi" />
+	<button class="btn btn-outline-success form-control">Təsdiqlə</button>
+</div>
+</form>
+<form asp-action="ShopStatusGiveUpdate" asp-controller="Shop" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="ShopId" value="@Model.Id" />
+	<input type="hidden"  name="ShopConfirmed" value="Təsdiqlənmədi" />
+	<button class="btn btn-outline-danger form-control">Təsdiqlənmədi</button>
+</div>
+</form>
+
+

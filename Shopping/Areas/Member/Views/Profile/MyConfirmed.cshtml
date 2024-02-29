@@ -1,0 +1,82 @@
+﻿
+@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>Səyifəyə Doğrulandı İconu Alma</h4>
+ <br />	
+
+
+    @if(@ViewBag.Confirmed=="Gözlənilir"){
+<h6>Səyifəniz  @ViewBag.Confirmed</h6>
+}  
+@if(@ViewBag.Confirmed=="Təsdiqləndi"){
+<h6>Səyifəniz  @ViewBag.Confirmed</h6>
+}
+    @if (@ViewBag.Confirmed == "Təsdiqlənmədi") { }
+
+        <form asp-action="MyConfirmed" asp-controller="Profile"  asp-area="Member" enctype="multipart/form-data" method="post">
+
+<br />
+
+
+    <div class="Contanier" >
+        <div style="position:relative; float:right; padding:3px; width:250px;border:1px solid red;">
+          
+            <p style="position:relative;"> <b>  <i class="fa fa-check-circle verification" style="color:blue;"></i>  Doğrulandı İconu Almaq 
+               üçün hesabınızda olmağı gərəkənlər <br /><br /><br />
+           1. Səyfəniz Ən azı 1 ili olması gərəkir. <br /><br />
+
+           2. Səyfəniz Aktive olunmalı.<br /><br />
+
+           3. Səyfənizdə Ən Azı 20 Elan.<br /><br />
+
+           4. Səyfənizdə çalıntı elan olmasın. <br /><br />
+           
+           5. Səyfənizdə qiymətdə yalan olmasın. <br />
+
+           Səyfəniz bu maddelere uyğundursa  Doğrulandı icon ile müraciət ede bilersiniz.
+
+           <br /><br />
+           Doğrulandı 10 gün və ya 1 ay yoxlamada olunacaq ve sizə cavab veriləcəkdir...
+
+           </b> </p>
+			<div class="form-group">
+				<label>Ad</label>
+				<input type="text" class="form-control" name="Name" />
+
+                <label>Soyad</label>
+				<input type="text" class="form-control" name="SurName" />
+
+                <label>Mağaza Adresi</label>
+				<input type="text" class="form-control" name="" />
+
+				<label>Telefon</label>
+                    <input class="form-control" id="phone" 
+                    type="tel" 
+                    name="Phone" 
+                    value="+994 (__) ___-__-__" 
+                    pattern="^\+994(\s+)?\(?(77|70|50|55|51)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+                    required>
+                  
+             
+<button type="submit" class="InputBtn"> <i class="fa fa-check-circle verification"></i>  Göndər</button>     
+ </div>
+<div class="DescriptionHelp">
+    
+</div>
+        </div>
+      
+    </div>
+
+
+</form>
+    
+
+    <script src="~/js/ProductAdd/ProductAdd.js"></script>
+
+
+
+ 
+                    

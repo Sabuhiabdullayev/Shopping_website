@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.AppUser
+
+@*<form asp-action="IncomingMessagesSend" asp-controller="Message" asp-area="Admin" method="post"> 
+                 <div class="SendInputDiv">
+        <input type="hidden" name="MessageOwnerId" value="@Model.Id">
+        <input type="text" name="ContactContent" class="SendInput" placeholder="Mesajiniz" required="">
+       
+    <button  type="submit" class="SendButton" href="#"><i class="fa fa-paper-plane SendButtonIcon"></i> </button>
+    </div>
+                    </form>*@
+
+                    <form asp-action="IncomingMessagesSend" asp-controller="Message" asp-area="Admin" method="post"> 
+        <input type="hidden" name="MessageOwnerId" value="@Model.Id">
+                        <input type="text" name="ContactContent" class="SendInput" placeholder="Mesajiniz" required="Mesajiniz">
+    <button type="submit" class="SendButton" href="#"><i class="fa fa-paper-plane SendButtonIcon"></i> </button>
+</form>    

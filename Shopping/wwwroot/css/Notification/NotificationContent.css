@@ -1,0 +1,266 @@
+.Notification{
+    position: relative;
+    width: 100%;
+    margin-left: -9px;
+    height: auto;
+
+   
+}
+.NotificationAllListShowBtn, .NotificationAllListHideBtn{
+    display: none;
+}
+.NotificationAllList{
+    position: absolute;
+    padding: 10px;
+    width: 380px;
+    left: 10px;
+    height: 650px;
+    background-color: rgb(206, 206, 206);
+    overflow: hidden;
+    overflow-y: auto;
+
+}
+.NotificationAllList::-webkit-scrollbar{
+    width: 11px;
+    height: 11px;
+    
+}
+.NotificationAllList::-webkit-scrollbar-thumb{
+    background-color: rgb(20, 238, 198);
+}
+
+.NotificationAllList .NotificationListLi{
+    position: relative;
+    width: 350px;
+    height: auto;
+    background-color: aliceblue;
+    list-style: none;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.NotificationContentShowBtn{
+    position: relative;
+    border: none;
+    background: none;
+    width: 370px;
+    height: auto;
+    cursor: pointer;
+    padding: 0%;
+}
+.NotificationListLi .NotificationSenderImage{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    top: 5px;
+    left: -45px;
+    border-radius: 50%;
+    padding: 2px;
+
+    background:linear-gradient(45deg, red,blue,green);
+}
+.NotificationListLi .NotificationSenderName{
+    position: relative;
+    top: -10px;
+    left: -10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+.NotificationListLi .NotificationSenderConfirmed{
+    position: relative;
+    top: -10px;
+    margin-left: -5px;
+    font-size: 12px;
+    color: blue;
+}
+.NotificationListLi .NotificationSenderContent{
+    position: relative;
+    margin-bottom: -20px;
+    padding: 5px;
+    left: 85px;
+    top: -35px;
+    width: 240px;
+    height: auto;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: none;
+}
+.NotificationSenderContent .NotificationPostedImage{
+width: 100%;
+height: 100px;
+border-radius: 5px;
+margin-top: 10px;
+margin-left: 20px;
+}
+.NotificationListLi .NotificationSenderDate{
+    position: relative;
+    left: 220px;
+    top: -10px;
+    font-size: 16px;
+}
+.NotificationRemove{
+    position: relative;
+    left: 220px;
+    top: -10px;
+    
+}
+.NotificationListLi .NotificationContentSenderIcon{
+    position: relative;
+    font-size: 25px;
+    margin-left: 10px;
+    color: blue;
+}
+
+.NotificationContentDiv{
+    position: relative;
+    left: 390px;
+    padding: 20px;
+    width: 790px;
+    height: 650px;
+    background:transparent;
+}
+.NotificationContentOwnerImg{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.NotificationShowSenderDate{
+    position: relative;
+    float: right;
+    top: -30px;
+}
+.NotificationShowSenderOwnerName{
+    color: black;
+    text-decoration: none;
+}
+.NotificationSenderShowConfirmed{
+    position: relative;
+    margin-left: 5px;
+    font-size: 12px;
+    color: blue;
+}
+.NotificationShowContent{
+    position: relative;
+    padding: 10px;
+    max-height: 500px;
+    font-size: 18px;
+    background:transparent;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.NotificationShowContent::-webkit-scrollbar{
+    display: none;
+}
+.NotificationShowContentSenderImg{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+@media screen and (max-width:600px){
+    .NotificationAllList{
+        position: absolute;
+        left: -380px;
+       top: 0px;
+       z-index: 10;
+       
+    }
+    .NotificationAllListShowBtn{
+        position: absolute;
+        display: block;
+        top: 0px;
+        z-index: 1;
+        margin-left: 8px;
+        border: none;
+        background:transparent;
+        font-size: 20px;
+        padding: 5px 10px 5px 10px;
+        border-radius: 50%;
+        color: blue;
+    } 
+    .NotificationAllListHideBtn{
+        position: absolute;
+        display: none;
+        top: -5px;
+        z-index: 100;
+        margin-left: 340px;
+        border: none;
+        background:transparent;
+        font-size: 20px;
+        padding: 5px 10px 5px 10px;
+        border-radius: 50%;
+        color: blue;
+    }
+    .NotificationAllListHideBtn:focus{
+        display: none;
+
+    }
+  .NotificationAllListShowBtn:hover{
+    background:rgb(222, 222, 205);
+
+  }
+  .NotificationAllListShowBtn:focus ~ .NotificationAllList{
+left: 10px;
+  transition: 0.5s ease-in;
+  }
+  
+  .NotificationAllListShowBtn:focus ~.NotificationAllListHideBtn{
+    display: block;
+  }
+  
+  .NotificationAllList:hover{
+    left: 10px;
+  }
+.NotificationContentDiv{
+    position: relative;
+    left: 0px;
+    padding: 30px;
+    width:390px;
+    height: 650px;
+    background:transparent;
+}
+.NotificationContentOwnerImg{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.NotificationShowSenderDate{
+    position: relative;
+    float: right;
+    top: -30px;
+}
+.NotificationShowSenderOwnerName{
+    color: black;
+    text-decoration: none;
+}
+.NotificationSenderShowConfirmed{
+    position: relative;
+    margin-left: 5px;
+    font-size: 12px;
+    color: blue;
+}
+.NotificationShowContent{
+    position: relative;
+    padding: 10px;
+    max-height: 500px;
+    font-size: 18px;
+    background:transparent;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.NotificationShowContent::-webkit-scrollbar{
+    display: none;
+}
+.NotificationShowContentSenderImg{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+}

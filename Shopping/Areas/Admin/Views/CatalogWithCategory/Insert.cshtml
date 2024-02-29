@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div style="padding-left:30px;"> 
+	<h3>Katalog və Kategoriya Əlavə Etmə </h3>
+<div class="row">
+	<div class="card ml-4" style="width:380px;">
+		<h5 class="ml-10">Katalog Əlave Etme</h5>
+		<span>Kataloglar</span>
+		<select class="form control" asp-items="ViewBag.catalog">
+			<option>Catalog</option>
+				</select>
+			<br />
+			<span>Yeni Katalog Adı</span>
+			<input type="text" class="form-control" id="txtNewCatalog" />
+			<br />
+			<button class="btn btn-outline-primary" id="btnNewCatalog">Əlave Et</button>
+	
+	</div>
+	<div class="card ml-2" style="width:380px;">
+			<h5 class="ml-10">Kategoriya Əlave Etme</h5>
+		<span>Katalog</span>
+		<select class="form control" asp-items="ViewBag.catalog" id="Catalog2">
+			<option>Catalog</option>
+			</select>
+		<span>Kategoriya</span>
+			<select class="form control" id="Category22">
+			<option>Kategoriya</option>
+			</select>
+			<br />
+			<span>Yeni Kategoriya Adı</span>
+			<input type="text" class="form-control" id="txtNewCategory1" />
+		<br />
+			<button class="btn btn-outline-primary" id="btnNewCategory1">Elave Et</button>
+		
+	</div>
+	<div class="card ml-2" style="width:380px;">
+			<h5 class="ml-10">Kategoriya Elave Etme</h5>
+		<span>Katalog</span>
+		<select class="form control" asp-items="ViewBag.catalog" id="Catalog">
+			<option>Catalog</option>
+			</select>
+		<span>Kategoriya</span>
+			<select class="form control" id="Category2">
+			<option>Kategoriya</option>
+			</select>
+			<span>Kategoriya</span>
+			<select class="form control" id="Category3">
+			<option>Kategoriya</option>
+			</select>
+			<br />
+			<span>Yeni Kategoriya Adı</span>
+			<input type="text" class="form-control" id="txtNewCategory2" />
+			<br />
+			<button class="btn btn-outline-primary" id="btnNewCategory2">Əlave Et</button>
+	</div>
+
+</div>
+</div>
+	<a href="/Admin/CatalogWithCategory/Update/" class="btn btn-outline-warning ml-4" >Düzənləmə</a>
+	<a href="/Admin/CatalogWithCategory/Remove/" class="btn btn-outline-danger mr-4" >Silmə</a>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+		<script src="~/lib/jquery/dist/jquery.js"></script>	
+		<script src="~/Admin/dist/js/CatalogWithCategory/Insert.js"></script>

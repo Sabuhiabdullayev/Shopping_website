@@ -1,0 +1,377 @@
+
+.MemberProfileDiv{
+    position: relative;
+    padding: 20px 0 20px 0;   
+     height: auto;
+     overflow: hidden;
+     overflow-y: auto;
+    background-color: transparent;
+
+}
+.MemberProfileDiv::-webkit-scrollbar{
+    display: none;
+}
+.MemberProfileDiv .MemberProfileTopBarDiv{
+    position: relative;
+    width: 1050px;
+    
+}
+.MemberProfileTopBarDiv .MemberProfileBigImage{
+    position: relative;
+       width: 1200px;
+       height: 200px;
+}
+.BigImageWebSiteIconUl{
+    position: relative;
+    float: right;
+    top: -37px;
+    margin-right: -100px;
+    padding-right: 10px;
+    background-color: grey;
+    border-radius: 3px;
+    opacity: 0.8;
+
+}
+.BigImageWebSiteIconUl .BigImageWebSiteIconLi{
+    display: inline;
+    list-style: none;
+    font-size: 20px;
+    margin:2px;
+}
+.BigImageWebSiteIconUl .BigImageWebSiteIconLi .BigImageWebSiteIconA{
+    text-decoration: none;
+    color: black;
+}
+.BigImageWebSiteIconUl .BigImageWebSiteIconLi .Web:hover{
+color: rgb(4, 42, 235);
+}
+.BigImageWebSiteIconUl .BigImageWebSiteIconLi .Facebook{
+    color: rgb(30, 0, 255);
+    }
+    .BigImageWebSiteIconUl .BigImageWebSiteIconLi .Instagram{
+        color:rgb(255, 4, 4);
+        }
+        .BigImageWebSiteIconUl .BigImageWebSiteIconLi .Tiktok{
+            color: rgb(0, 0, 0);
+  
+          
+            }
+.MemberProfileFooter{
+    position: relative;
+    width: 1250px;
+    height: auto;
+
+}
+ .MemberProfileSmallImage{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: 20px;
+    left: 50px;
+    margin-right: 10px;
+  
+}
+.MemberProfileFooterName{
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    top: 25px;
+    left: 50px;
+
+}
+.MemberProfileFooterName .MemberProfileConfirm{
+    position: relative;
+    margin-left: 5px;
+    top: 1px;
+    font-size: 12px;
+    color: #174aff;
+}
+
+.MemberProfileFooterName .Toolktip{
+    position: absolute;
+    background-color: rgb(148, 148, 148);
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    padding: 4px;
+    width: 80px;
+    border-radius: 4px;
+    top: -25px;
+    left: 60px;
+    font-size: 15px;
+    display: none;
+}
+.MemberProfileFooterName .MemberProfileConfirm:hover ~.Toolktip{
+   display: block;
+}
+.MemberProfileListUl{
+    position: relative;
+text-align: center;
+top: 30px;
+
+margin-bottom: 50px;
+    
+}
+.MemberProfileListUl .MemberProfileListli{
+    display: inline;
+    padding: 10px 30px 10px 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    list-style: none;
+    font-size: 17px;
+    cursor: pointer;
+   
+    
+
+}
+.MemberProfileListUl .MemberProfileListli:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+ .MemberProfileContentAllProduct, .MemberProfileContentPremium , .MemberProfileContentVip, .MemberProfileContentPopular{
+    position: relative;
+    width: 1200px;
+    height: auto;
+    left: 40px;
+    min-height: 400px;
+    max-height: 100%;
+    padding: 10px;
+    
+   
+   
+}
+.MemberProfileContentDescription{
+    position: relative;
+    margin-bottom: 100px;
+    width: 1200px;
+    height: auto;
+    left: 50px;
+    min-height: 400px;
+    max-height: 100%;
+    padding: 10px;
+}
+.MemberProfileContentPremium , .MemberProfileContentVip, .MemberProfileContentPopular, .MemberProfileContentDescription{
+    display: none;
+}
+
+.DescriptionDefault{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  
+}
+.DescriptionDefault .Default{
+    position: relative;
+    padding: 10px;
+    width: 1200px;
+    height:auto;
+    overflow: hidden;
+
+
+}
+.Default .DescriptionP{
+    position: relative;
+    padding: 10px;
+    width: 500px;
+    height: auto;
+
+}
+.Default li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+.Update{
+    display: none;
+}
+.Update li{
+    list-style: none;
+}
+.Update textarea{
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+}
+.Update li{
+    position: relative;
+margin-bottom: 10px;
+}
+.Update input{
+    position: relative;
+    padding: 2px;
+    outline: none;
+    background-color: transparent;
+    width: 310px;
+    border: .5px solid black;
+
+}
+.Update input:focus{
+    border: none;
+    border-bottom: 1px solid blue;
+}
+.Default  li a{
+    position: relative;
+    margin-left: 20px;
+   font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+.MemberDescriptionWebSiteUpdateGet{
+    position: relative;
+    left: 300px;
+
+    width: 140px;
+    height: 30px;
+    font-size: 16px;
+    padding: 3px 10px 3px 0px;
+    outline: none;
+    background: none;
+    text-align: center;
+    border: 1px solid rgb(29, 171, 29);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.MemberDescriptionWebSiteUpdateSet{
+    position: relative;
+    left: 300px;
+
+    width: 140px;
+    height: 30px;
+    font-size: 16px;
+    padding: 3px 10px 3px 10px;
+    outline: none;
+    background: none;
+    border: 1px solid rgb(29, 171, 29);
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: none;
+
+}
+.MemberDescriptionWebSiteUpdateGet:hover{
+border: 1px solid rgb(85, 2, 168);
+
+}
+
+
+.MemberProfileShopAdress{
+    position: relative;
+    padding: 20px 0 40px 0;
+    width: 500px;
+  
+}
+@media screen and (max-width:658px){
+    .MemberProfileDiv{
+        position: absolute;
+        width: 400px;
+     min-height: 800px;
+      
+    }
+
+    .MemberProfileContentDescription{
+        position: relative;
+        left: 0px;
+        margin:0 0 100px 0;
+    }
+    .MemberProfileDiv .MemberProfileTopBarDiv{
+        position: relative;
+        width: 380px;
+        height: 200px;
+        left: 50%;
+        transform: translate(-50%);
+        
+    }
+ 
+    .MemberProfileTopBarDiv .MemberProfileBigImage{
+        position: relative;
+        right: 10px;
+           width: 380px;
+           height: 200px;
+    }
+    .BigImageWebSiteIconUl{
+        position: relative;
+        right: 125px;
+    }
+    .MemberProfileFooter{
+        position: relative;
+        width: 380px;
+        height: auto;
+        overflow: hidden;
+      
+    
+    }
+    .MemberProfileSmallImage{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        top: 0px;
+        z-index: 100;
+        left: 30px;
+        margin-right: 10px;
+      
+    }
+
+    .MemberProfileFooterName{
+        left:30px;
+        top: 0px;
+    }
+     .MemberProfileListUlDiv{
+        position: relative;
+        width: 400px;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .MemberProfileFooterName .MemberProfileConfirm:hover ~.Toolktip{
+        display: none;
+     }
+    .MemberProfileListUlDiv::-webkit-scrollbar{
+        display: none;
+    }
+    .MemberProfileListUl{
+position: relative;
+width: 1000px;
+    }
+  
+ 
+   
+     .MemberProfileContentPremium, .MemberProfileContentVip, .MemberProfileContentPopular, .MemberProfileContentDescription{
+        position: relative;
+        width: 400px;
+        left: 30px;
+        height: 100%;
+        display: none;
+    }
+    .Update{
+        position: relative;
+        left: -30px;
+    }
+    .MemberDescriptionWebSiteUpdateGet{
+        position: relative;
+        left: 150px;
+    
+        width: 140px;
+        height: 30px;
+        font-size: 16px;
+        padding: 3px 10px 3px 0px;
+        outline: none;
+        background: none;
+        text-align: center;
+        border: 1px solid rgb(29, 171, 29);
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+    .MemberDescriptionWebSiteUpdateSet{
+        position: relative;
+        left: 150px;
+    
+        width: 140px;
+        height: 30px;
+        font-size: 16px;
+        padding: 3px 10px 3px 10px;
+        outline: none;
+        background: none;
+        border: 1px solid rgb(29, 171, 29);
+        letter-spacing: 1px;
+        cursor: pointer;
+        display: none;
+    
+    }
+}

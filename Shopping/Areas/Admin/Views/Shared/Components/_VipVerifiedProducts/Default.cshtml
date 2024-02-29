@@ -1,0 +1,42 @@
+﻿@model List<Product>
+
+	@if(@Model.Count()==0){
+		<h3>Vip Təsdiqlənmiş Elan Yoxdur...</h3>
+}else{
+	<h5>Vip Təsdiqlənmmiş Elan Sayısı (@Model.Count())</h5>
+	<table class="table table-bordered">
+
+	<tr>
+		<th>Elan Nomresi</th>
+		<th>Sahibi</th>
+		<th>Elan Adi</th>
+		<th>Şəhər</th>
+		<th>Vip Status</th>
+		<th>Tarix</th>
+		<th>Elana Göz at</th>
+
+	</tr>
+	@foreach (var item in Model)
+	{
+
+	<tr>
+		<th>@item.ProductId</th>
+		<th>@item.ProductOwnerName</th>
+			@if (item.ProductName != null)
+			{
+				<th><a asp-action="VipTheAdd" asp-controller="Product" asp-route-id="@item.ProductId" asp-area="Admin">@item.ProductName</a></th>
+			}
+			@if (item.CarMake != null)
+			{
+				<th><a asp-action="VipTheAdd" asp-controller="Product" asp-route-id="@item.ProductId" asp-area="Admin">@item.CarMake</a></th>
+				<th>@item.ProductModel</th>
+			}
+		<th>@item.City</th>
+		<th>@item.Vip</th>
+		<th>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</th>
+		<th><a class="btn btn-outline-success">Göz At</a></th>
+
+	</tr>
+	}
+	</table>
+	}

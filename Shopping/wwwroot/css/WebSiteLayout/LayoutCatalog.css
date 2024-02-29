@@ -1,0 +1,179 @@
+.LayoutCatalogDiv{
+  position: relative;
+  width: 800px;
+  height: auto;
+margin-bottom: 30px;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+}
+.LayoutCatalogform{
+  position: relative;
+  display: inline-flex;
+  width: 70px;
+  height: 70px;
+  padding: 1px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  border: none;
+  background:transparent;
+}
+.LayoutCatalogAll a{
+  text-decoration: none;
+}
+.LayoutCatalogDiv .LayoutCatalogBtn{
+  position: relative;
+  width: 70px;
+  height: 70px;
+  padding: 1px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  border: none;
+  background: transparent;
+}
+.LayoutCatalogDiv .LayoutCatalogBtn .LayoutCatalogImg{
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+
+}
+.LayoutCatalogDiv .LayoutCatalogBtn .LayoutCatalogName{
+  position: relative;
+ font-size: 15px;
+}
+
+.LayoutCatalogDiv{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+@media screen and (max-width: 900px) {
+  .LayoutCatalogAll .LayoutCatalogImg{
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+   
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.LayoutCatalogDiv{
+  display: flex;
+  max-width: 370px;
+  position: relative;
+  top: -10px;
+  margin-bottom: -10px;
+  display: none;
+}
+.LayoutCatalogDiv i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.LayoutCatalogDiv i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.LayoutCatalogDiv i:hover{
+  background: #f2f2f2;
+}
+.LayoutCatalogDiv i:first-child{
+  left: -22px;
+  display: none;
+}
+.LayoutCatalogDiv i:last-child{
+  right: -22px;
+}
+.LayoutCatalogDiv .LayoutCatalogAll{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+.LayoutCatalogAll a{
+  text-decoration: none;
+}
+.LayoutCatalogAll.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.LayoutCatalogAll.dragging .LayoutCatalogImg{
+  pointer-events: none;
+}
+.LayoutCatalogAll .LayoutCatalogImg{
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 6);
+}
+.LayoutCatalogAll .LayoutCatalogImg:first-child{
+  margin-left: 0px;
+}
+.LayoutCatalogImg{
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+}
+@media screen and (max-width: 550px){
+    .LayoutCatalogDiv{
+        position: relative;
+        white-space: nowrap;
+        width: 400px;
+        height: 135px;
+        overflow: hidden;
+        display: none;
+        
+    }
+    .LayoutCatalogAll{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+    }
+    .LayoutCatalogBtn{
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background: transparent;
+        border: none;
+        margin-right: 20px;
+        
+    }
+    .LayoutCatalogImg{
+        position: relative;
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+    }
+    .LayoutCatalogName{
+        position: relative;
+        width: 70px;
+        height: auto;
+        white-space:initial;
+
+       
+    }
+}

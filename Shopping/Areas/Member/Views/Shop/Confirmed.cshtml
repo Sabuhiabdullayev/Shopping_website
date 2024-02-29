@@ -1,0 +1,40 @@
+﻿@model AppUser
+
+
+@if(ViewBag.ShopConfirm=="Təsdiqləndi"){
+	<h4>Mağaza Təsdiqləndi</h4>
+
+}
+
+@if(ViewBag.ShopConfirm == "Təsdiqlənmədi")
+{
+	<h4>Mağaza Təsdiqləndi İcon Alma Formu</h4>
+	<form asp-action="Confirmed" asp-controller="Shop" asp-area="Member" method="post">
+
+
+<form asp-action="Confirmed" asp-controller="Shop" asp-area="Member" method="post">
+
+<div class="form-group">
+	<label>Ad Soyad</label>
+				<input type="text" class="form-control" />
+				<br />
+	<label>Mağaza Əlaqə Telefonu</label><span></span>
+	 <input class="form-control" id="phone" 
+                    type="tel" 
+                    name="Phone" 
+                    value="+994 (__) ___-__-__" 
+                    pattern="^\+994(\s+)?\(?(77|70|50|55|51)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+                    required>
+</div>
+<br />
+<div class="form-group">
+<button class="btn btn-outline-info form-control">Göndər</button>
+</div>
+</form>
+</form>
+}
+@if(ViewBag.ShopConfirm == "Yoxlanılır")
+{
+	<h5>Mağaza Tesdiqləndi İcon Almaq Üçün Yoxlanılır...</h5>
+}
+<script src="~/js/ProductAdd/ProductAdd.js"></script>

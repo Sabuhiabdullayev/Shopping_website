@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<Product>
+
+
+
+<div class="row" >
+	<h5>Ən Son Elanlar</h5>
+	@foreach (var x in Model)
+	{
+		
+
+			<div class="card ProductListCard" >
+		
+				@if(User.Identity.IsAuthenticated){
+			 @await Component.InvokeAsync("_CartProductList",new{id=@x.ProductId})
+
+				}else{
+					 <button class="ProductListSelectBtn"><i class="fa-regular fa-heart ProductListSelectIcon"></i></button>
+
+				}
+
+			 <a href="/Product/Detail/@x.ProductId" class="DefaultProductList">
+				<img class="Img" src="~/Shopping/ProductImg/@x.Image1" alt="">
+				@if (x.ShopProductStatus == "Active")
+				{
+					<b class="ProductListShop">Mağaza</b>
+				}
+				@if (@x.Vip == "Təsdiqləndi")
+				{
+					<img class="ProductListVip" src="~/Shopping/VipPremium/Vip.png" alt="">
+				}
+				@if (@x.Premium == "Təsdiqləndi")
+				{
+					<img class="ProductListPremium" src="~/Shopping/VipPremium/Premium.png" alt="">
+
+				}
+				<ul class="ProductListFooterDiv">
+					<li class="Price"><b><b>@x.Price @x.PriceCurrency</b></b><span></span></li>
+					@if (x.ProductName.Length>23)
+					{
+						<li><b>@x.ProductName.Substring(0,x.ProductName.Substring(0,23).LastIndexOf(" "))...</b></li>
+					}else{
+						<li><b>@x.ProductName</b></li>
+					}
+					<li>
+						Sahibi:<b class="ProductListName">@x.AppUser.Name <span class="ProductListNameTooltip">@x.AppUser.Name</span></b>
+                     
+						@if (@x.AppUser.confirmed == "Təsdiqləndi")
+						{
+							<i class="fa fa-check-circle Confirmed"></i>
+
+							<span class="ProductListTooltip">Təsdiqləndi</span>
+						}
+					</li>
+					<li class="CityDate"><b>@x.City</b>               @(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</li>
+				</ul>
+			</a>
+		</div>
+		
+	}
+	
+</div>

@@ -1,0 +1,78 @@
+﻿@model ProfileUpdateViewModel
+
+@{
+    ViewData["Title"] = "Ayarlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container-fluid">
+	<style>
+        .dogrulama{
+            position:absolute;
+            right:-850px;
+            top:20px;
+        }
+
+
+    </style>
+        <div class="row px-xl-5">
+            <div class="dogrulama"><i class="fa fa-check-circle verification"></i><a asp-action="MyConfirmed" asp-controller="Profile">  Tesdiqləndi İcon alma</a> </div>
+            	<form asp-area="Member" method="post" enctype="multipart/form-data">
+            <div class="col-lg-8">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3" style="color:white;">Profil Ayarlari Deyistirme</span></h5>
+                <div class="bg-light p-30 mb-5">
+				<div class="row">
+				
+					<div><img src="~/Shopping/MemberImg/@Model.ImageUrl"  style="width:100px;height:100px;border-radius:50%;background:white;"/>
+						<input type="file" asp-for="ImageUrl" />
+                    </div>
+                        <div class="col-md-6 form-group">
+                            <label>Ad</label>
+                            <input class="form-control" asp-for="Name" type="text" name="Name" placeholder="Adınız...">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Soyad</label>
+                            <input class="form-control" type="text" asp-for="SurName" name="SurName" placeholder="Soyadınız...">
+                        </div>
+                       
+                         <div class="col-md-6 form-group">
+                            <label>Istifadeci Adi</label>
+                            <input class="form-control" type="text" asp-for="UserName" placeholder="İstifadeçi Adınız...">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" asp-for="Email" name="Email" placeholder="Emailiniz...">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Cinsiyyət</label>
+                            <input class="form-control" type="text" asp-for="Genger" placeholder="Cinsiyyətiniz...">
+                        </div>
+                  
+						  <div class="col-md-6 form-group">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Şifrə</label>
+                            <input class="form-control" type="text" asp-for="Password" placeholder="Şifrəniz...">
+                        </div>
+                         <div class="col-md-6 form-group">
+                            <label>Şifrə Təkrar</label>
+                            <input class="form-control" type="text" asp-for="ConfigPassword" placeholder="Şifrə Tekrarınız...">
+                        </div>
+                      
+                        </div>
+						<br />
+                            <button class="btn btn-primary">Profil Ayarlari Deyistirmeye Eminsinizmi</button>
+                    </div>
+                </div>
+           
+                </form>
+                </div>
+            </div>
+
+            
+    
+  

@@ -1,0 +1,249 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.MemberList{
+    position: relative;
+    height: auto;
+width: 1250px;
+left: -40px;
+background-color: transparent;
+}
+.MemberList .row{
+    position: relative;
+    margin-left: 15px;
+    margin-top: 2px;
+
+}
+.MemberList .row .card{
+position: relative;
+margin-left: 30px;
+margin-bottom: 10px;
+width: 230px;
+height: 260px;
+border-radius: 10px;
+background-color: transparent;
+overflow: hidden;
+
+}
+.MemberList .row .card .MemberListA{
+    position: relative;
+    width: 230px;
+    height: 260px;
+    left: -13px;
+    border-radius: 10px;
+    background-color: rgb(237, 237, 237);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+
+/* .MemberList .row .card .MemberListA::after{
+    position: absolute;
+    content: "";
+    width: 230px;
+    height: 120px;
+    left: 0px;
+    background-color: rgb(0, 201, 237);
+
+    
+} */
+
+.MemberList .row .card .MemberListA .BigImg{
+    position: relative;
+    width: 230px;
+    height: 140px;
+    background-color: rgb(0, 201, 237);
+}
+.MemberList .row .card:hover{
+
+    box-shadow: 0 0 4px 2px rgb(119, 119, 119);
+transform: scale(1.1);
+z-index: 20;
+}
+.MemberList .row .card .MemberListA .MemberListImg{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 70px;
+    z-index: 10;
+    top: -90px;
+      color: rgb(26, 197, 151);
+
+    padding: 3px;
+    z-index: 10;
+
+}
+
+.MemberList .row .card .MemberListA .MemberListName{
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    color: black;
+    font-size: 18px;
+}
+
+.MemberList .row .card .MemberListA .MemberListName .MemberListConfim{
+    position: absolute;
+   
+    font-size: 13px;
+    top: 9px;
+     margin-left: 2px;
+    color: black;
+    
+}
+.MemberList .row .card .MemberListA .MemberListName .MemberListConfim:hover{
+    color: blue;
+}
+.MemberList .row .card .MemberListA .MemberListName .Toolktip{
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    font-size: 14px;
+    padding: 2px 8px 2px 8px;
+    border-radius: 10px;
+    color: rgb(0, 94, 255);
+    opacity: 0.7;
+    z-index: 30;
+    display: none;
+    background-color: rgb(197, 197, 197);
+}
+.MemberList .row .card .MemberListA .MemberListName .MemberListConfim:hover ~.Toolktip{
+    display: block;
+}
+   .MemberListPhone{
+        position: absolute;
+        top: 180px;
+        font-size: 17px;
+       left: 40px;
+       color: rgb(26, 197, 151);
+    }
+.MemberList .row .card .MemberListA .MemberListProductNumber{
+    position: absolute;
+    top: 205px;
+    font-size: 14px;
+    left: 50px;
+    color: black;
+
+}
+.MemberList .row .card .MemberListA .MemberListDate{
+    position: absolute;
+    top: 230px;
+    font-size: 14px;
+    left:50%;
+    transform: translate(-50%);
+    color: black;
+}
+@media screen and (max-width:658px){
+    .MemberList{
+        position: relative;
+        height: auto;
+    width: 400px;
+    left: -20px;
+    }
+    .MemberList .row{
+        position: relative;
+        margin-left: -30px;
+        margin-top: 2px;
+    
+    }
+    .MemberList .row .card{
+    position: relative;
+ left: -35px;
+    margin-bottom: 20px;
+    width: 410px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: transparent;
+    overflow: hidden;
+    
+    }
+    .MemberList .row .card .MemberListA::after{
+        position: absolute;
+        content: "";
+        width: 170px;
+        height: 120px;
+        left: 0px;
+        background-color: rgb(0, 201, 237);
+    
+        
+    }
+    .MemberList .row .card .MemberListA{
+        position: relative;
+        width: 390px;
+        height: 120px;
+        left: -13px;
+        border-radius: 10px;
+        background-color: rgb(226, 234, 243);
+        text-decoration: none;
+        overflow: hidden;
+    }
+    .MemberList .row .card:hover{
+
+        box-shadow: 0 0 4px 2px rgb(119, 119, 119);
+    transform: scale(1.0);
+    z-index: 20;
+    }
+    .MemberList .row .card .MemberListA .BigImg{
+        position: relative;
+        width: 170px;
+        height: 140px;
+        z-index: 10;
+        background-color: rgb(0, 201, 237);
+    }
+    .MemberList .row .card .MemberListA .MemberListImg{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        padding: 3px;
+        background-color: rgb(0, 201, 237);
+
+     left: -180px;
+     top: -10px;
+    
+    }
+    .MemberList .row .card .MemberListA .MemberListName{
+        position: absolute;
+        top: 10px;
+        left: 180px;
+         font-size: 20px;
+        color: rgb(34, 135, 176);
+    }
+    
+    .MemberList .row .card .MemberListA .MemberListName .MemberListConfim{
+        position: relative;
+        top: 1px;
+        margin-left: -1px;
+    }
+    .MemberList .row .card .MemberListA .MemberListName .MemberListConfim:hover ~.Toolktip{
+        display: block;
+    }
+    .MemberList .row .card .MemberListA .MemberListProductNumber{
+        position: absolute;
+        top: 65px;
+        font-size: 14px;
+        left: 190px;
+        color: black;
+    
+    }
+    .MemberList .row .card .MemberListA .MemberListDate{
+        position: absolute;
+        top: 88px;
+        font-size: 14px;
+        left:50%;
+        margin-left: 60px;
+        transform: translate(-50%);
+        color: black;
+    }
+    .MemberListPhone{
+        position: absolute;
+        top: 40px;
+        font-size: 17px;
+      
+     left: 190px;
+        
+        color: rgb(26, 197, 151);
+    }
+}

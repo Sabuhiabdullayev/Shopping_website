@@ -1,0 +1,176 @@
+﻿@model Product
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.ProductId != null)
+{
+	<!DOCTYPE html>
+	<html lang="tr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>@Model.ProductName</title>
+
+		<link rel="stylesheet" href="~/css/Detials/Complaint.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="~/css/Detials/Elandetail.css">
+		<link rel="stylesheet" href="~/css/Detials/slider3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	</head>
+	<body>
+
+
+		<div class="ContanierElanDetail">
+
+			<div class="DefaultDetail">
+
+				@await Html.PartialAsync("~/Views/ProductComplaint/ProductComplaintSend.cshtml")
+
+				<!-- Start Image Slider -->
+			@await Component.InvokeAsync("_ProductDetailImgSlider",new{id=@Model.ProductId})
+				<!-- End Image Slider -->
+
+			<div class="FooterListDetail">
+					<div class="PriceProducNameDetail">
+						<div class="PriceDiv">
+							@if (Model.PriceCurrency == "Azn"||Model.PriceCurrency == "₼")
+							{
+								<b class="Price">@Model.Price <span>@Model.PriceCurrency</span></b>
+							}
+							else
+							{
+								<b class="Price">@Model.Price <span>@Model.PriceCurrency</span></b>
+
+							
+								@if (Model.PriceCurrency == "$")
+								{
+									<b class="PriceValute">= @(Model.Price*1.7) <span> ₼</span></b>
+								}else if (Model.PriceCurrency == "€")
+								{
+		                       <b class="PriceValute">= @(Model.Price*1.9) <span> ₼</span></b>
+								}
+					}
+						</div>
+						<div class="ProductNameDiv">
+							<span class="ProductName" id="ProductName">@Model.ProductName </span>
+							<a class="DetailVip" href="#">
+								<img src="~/Shopping/VipPremium/Vip.png" class="VipPremiumImg" alt=""><b class="VipName"><i class="fa fa-arrow-up"></i>Sadəcə 3₼ Elanı Vip Etmək !</b>
+							</a>
+							<a class="DetailPremium" href="#">
+								<img src="~/Shopping/VipPremium/Premium.png" class="VipPremiumImg" alt="">  <b class="PremiumName"><i class="fa fa-arrow-up"></i> Sadəcə 6₼ Elanı Premium Etmək !</b>
+							</a>
+						</div>
+					</div>
+
+
+					<!-- Start Detail List -->
+				@await Component.InvokeAsync("_ProductDetailFooterDescription",new{id=@Model.ProductId})
+					<!-- End Detail List -->
+
+				<div class="PhoneDiv">
+						
+						@await Component.InvokeAsync("_ProductDetailUserConfirmed",new{id=@Model.AppUserId})
+						<br>
+						<span class="PhoneSpan">Tel No:</span> <div class="PhoneAll">
+							<b class="Phone1">@Model.Phone</b> <br>
+							@if (@Model.Phone2 != null)
+
+							{
+								<b class="Phone2">@Model.Phone2</b>
+
+								<br>
+							}
+
+						</div>
+
+
+					</div>
+
+					<div class="ProductViewDiv">
+						<span class="ProductId">
+							<i class="fa fa-hashtag HashtagView"></i> Elanın Nömrəsi : <span id="productId">@Model.ProductId</span> <b class="ProductIdDinamic"></b>
+
+						</span><br>
+						<span class="ProductId"><i class="fa fa-street-view" ></i> Baxışların Sayısı : <b id="ProductViewDinamic">0</b></span><br>
+						 <span class="ProductId"><i class="fa-regular fa-calendar"></i> Elan Tarixi : @(((DateTime)Model.Date).ToString("dd/MM/yyyy")) <b class="ProductViewDinamic"></b></span><br><br><br>
+
+						<br><br>
+						@if(User.Identity.IsAuthenticated){
+				@await Component.InvokeAsync("_AuthenticatedMember")
+						}else{
+														<button class="SelectProduct LikeButton" id="btnLike" > <i class="fas fa-thumbs-up"></i>   Bəyən</button>
+						}
+						<span id="likeSpan">0</span>
+					<br />
+						<div id="SelectedDiv" style="Position:absolute; margin-bottom:5px ">
+							<a type="button" class="SelectProduct" id="btnSelectProduct"><i class="fa-regular fa-heart HeartWarning" id="SelectIcon"></i> Elani Secilmislerin arasina elave et !</a>
+						</div>
+						<br>
+						<a class="SelectProduct ProductComplatint" style="bottom:-6px"><i class="fa fa-warning HeartWarning"></i> Elanı Şikayət elə</a>
+
+					</div>
+		 	<!--Start Comment-->
+				<div class="CommentDiv">
+						<h2 class="CommentTopName">Rəy Bildirmək</h2>
+						@if (Model.CommentStatus == "Active")
+						{
+							<li class="CommentSendInput">
+							<input type="text" class="CommentSendInput" id="textComment">
+							<button type="button" class="CommentSendBtn" id="btnComment"><i class="fa-solid fa-right-to-bracket"></i></button>
+						</li>
+						<li class="CommentCountLi">Rəylər(0)</li>
+						<ul class="CommentUl">
+						</ul>
+						}else{
+					
+								<ul class="CommentUl">
+																		<li class="CommentCountLi"><span class="ml-40 mt-4">Elanın rəy bildirməsi bağlıdır!</span></li>
+
+						</ul>
+					
+						}
+						
+					</div>
+				</div>
+				<!-- End Comment -->
+				<!--Start Product List-->
+			<footer class="FooterGetList">
+				@await Component.InvokeAsync("_ProductDetailProductList",new{id=@Model.Category2Id})
+				</footer>
+				<!--End Product List-->
+			</div>
+
+		</div>
+	
+
+		
+		<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+		<script src="~/lib/jquery/dist/jquery.js"></script>		
+		<script type="text/javascript" src="~/js/Details/ajax.js"></script>
+		
+	
+		
+		@if (Model.Image2 != null)
+		{
+			<script src="~/js/Details/ImgSlider.js"></script>
+		}
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script src="~/js/Details/Complaint.js"></script>
+		<script src="~/js/Details/ElanDetails.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+	</body>
+	</html>
+}

@@ -1,0 +1,61 @@
+﻿@using EntityLayer.Concrete
+@model List<Cart>
+<div id="MyCartDiv">
+	@if(@Model.Count()==0){
+	<h4 style="text-align:center; justify-items:center; top:50px">Heç bir seçilmiş elan yoxdur</h4>
+}else{
+	<form asp-action="AllDelete" asp-controller="Cart" asp-area="Member" method="post">
+		<button style="float:right" class="btn btn-outline-danger" onclick="return confirm('Seçilmiş Elanları Hamısını Siləcəkmisiniz.')"><span>Hamısını Çıxart</span><i class="fa-solid fa-trash" style="margin-left:5px"></i></button>
+	<input type="hidden" name="count" value="@Model.Count()" />	
+	</form>
+	<h4 >Seçilmiş Elanlar (<span id="MyCartCount">@Model.Count()</span>)</h4>
+<div class="row" id="SelectTable">
+
+	@foreach (var x in Model)
+	{
+
+			<div class="card ProductListCard">
+	  <button class="SelectProduct ProductListSelectBtn" data-id="@x.CartId"><i class="fa-regular fa-heart ProductListSelectIcon"><i class="fa fa-heart AddProductListSelectIcon"></i></i></button>
+
+			 <a href="/Product/Detail/@x.ProductId" class="DefaultProductList">
+				<img class="Img" src="~/Shopping/ProductImg/@x.Product.Image1" alt="">
+				@if (x.Product.ShopProductStatus == "Active")
+				{
+					<b class="ProductListShop">Mağaza</b>
+				}
+				@if (@x.Product.Vip == "Təsdiqləndi")
+				{
+					<img class="ProductListVip" src="~/Shopping/VipPremium/Vip.png" alt="">
+				}
+				@if (@x.Product.Premium == "Təsdiqləndi")
+				{
+					<img class="ProductListPremium" src="~/Shopping/VipPremium/Premium.png" alt="">
+
+				}
+				<ul class="ProductListFooterDiv">
+					<li class="Price"><b><b>@x.Product.Price @x.Product.PriceCurrency</b></b><span></span></li>
+					@if (x.Product.ProductName.Length>23)
+					{
+						<li><b>@x.Product.ProductName.Substring(0,x.Product.ProductName.Substring(0,23).LastIndexOf(" "))...</b></li>
+					}else{
+						<li><b>@x.Product.ProductName</b></li>
+					}
+					<li>
+						Sahibi:<b class="ProductListName">@x.Product.ProductOwnerName <span class="ProductListNameTooltip">@x.Product.ProductOwnerName</span></b>
+                     
+					
+					</li>
+					<li class="CityDate"><b>@x.Product.City</b>               @(((DateTime)x.Product.Date).ToString("dd-MMM-yyyy"))</li>
+				</ul>
+			</a>
+		</div>
+		
+	}
+</div>
+}
+</div>	
+		
+
+
+
+

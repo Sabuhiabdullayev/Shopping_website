@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qeydiyyat</title>
+    <link rel="stylesheet" href="SignUpExample.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="SignUpContanier">
+      <div class="SignUpContent">
+        <nav class="SignUpNavbar"><h3>Qeydiyyat</h3></nav>
+        <form action="">
+        <li class="SignUpInputDiv"> 
+            <input type="text" class="SignUpInput" placeholder="Ad" required>
+        </li>
+        <li class="SignUpInputDiv"> 
+            <input type="text" class="SignUpInput" placeholder="Soyad" required>
+        </li>
+        <li class="SignUpInputDiv"> 
+            <input type="text" class="SignUpInput" placeholder="İstifadəçiAdı" required>
+        </li>
+       <li class="SignUpInputDiv"> 
+        <input type="email" class="SignUpInput" placeholder="Email" required>
+    </li>
+    <li class="SignUpInputDiv"> 
+        <input class="SignUpInput" id="phone" 
+        type="tel" 
+        name="phone" 
+        value="+994 (__) ___-__-__" 
+        pattern="^\+994(\s+)?\(?(77|55|50|70|51|99)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+        required>
+    </li>
+    <li class="SignUpInputDiv"> 
+    <label for="Men" class="SignUpGender"> <input type="radio" id="Men">Kişi </label>
+    <label for="Women" class="SignUpGender">  <input type="radio" id="Women">Qadın</label>
+    <label for="Other" class="SignUpGender"><input type="radio" id="Other">Heç Biri</label>
+<input type="hidden" class="GengerInput">
+
+      
+    </li>
+    <li class="SignUpInputDiv"> 
+     <img src="" alt="" id="preview1"  class="SignUpBigImg">
+     <img src="" id="preview2"  class="SignUpSmallImg">
+
+     <label for="image-input1" class="UploadBig">Arxa Plan Şəkili Elavə Edin</label>
+   
+
+     <input type="file" class="SignUpInputImg"  id="image-input1" accept="image/*">
+    </li>
+    <li class="SignUpInputDiv"> 
+        <label for="image-input2" class="UploadSmall">Profil Şəkili Elavə Edin</label>
+        <input type="file" class="SignUpInputImg"id="image-input2" accept="image/*"> 
+        
+     
+       </li>
+     <li class="SignUpInputDiv"> 
+        <input type="password" class="SignUpInput" id="SignInPasswordInput1" placeholder="Şifrə" required>
+        <i class="fa-sharp fa-solid fa-eye SignInPasswordShow1"></i>
+    </li>
+    <li class="SignUpInputDiv"> 
+        <input type="password" class="SignUpInput" id="SignInPasswordInput2" placeholder="Şifrə Təkrar" required>
+        <i class="fa-sharp fa-solid fa-eye SignInPasswordShow2"></i>
+    </li>
+    <button class="SignUpBtn">Qeydiyyat</button>
+
+        <a href="#" class="SignUpSignIn">Giriş</a>
+    </form>
+      </div>
+    </div>
+    <script src="SignUpExample.js"></script>
+</body>
+</html>

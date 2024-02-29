@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "NotificationAllList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model List<Notification>
+<table class="table table-bordered">
+	<tr>
+		<th>#</th>
+		<th>Şəkil</th>
+		<th>Başlıq</th>
+		<th>Mezaj</th>
+		<th>Status</th>
+		<th>Tarix</th>
+		<th>Düzəlt</th>
+		<th>Sil</th>
+		
+	</tr>
+	@foreach(var x in Model){
+<tr>
+	<td>@x.NotificationId</td>
+		<td><img src="~/Shopping/NotificationImg/@x.Img" style="width:80px;" />	</td>
+		<td>@x.Title</td>
+		<td>@x.Content</td>
+		<td>@x.NotificationStatus</td>
+		<td>@(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</td>
+		<td><a href="/Admin/Notification/Update/@x.NotificationId" class="btn btn-outline-warning">Düzəlt</a></td>
+		<td><a href="/Admin/Notification/Delete/@x.NotificationId" 
+		id="BtnDelete" onclick="return confirm('Göndərilən Mezajı Siləcəkmisiniz.');" class="btn btn-outline-danger">Sil</a></td>
+			
+	</tr>
+	}
+</table>
+

@@ -1,0 +1,12 @@
+﻿@model List<EntityLayer.Concrete.AppUser>
+
+	 @foreach(var x in Model){
+     <li class="MessageUser">
+        <a href="/Admin/Message/IncomingMessages/@x.Id">
+        <img src="~/Shopping/MemberImg/@x.ImageUrl" alt="" class="MessageUserImg">
+        <b class="MessageUserName">@x.Name @x.SurName</b>
+
+    </a>
+    <hr>
+    </li> 
+        }

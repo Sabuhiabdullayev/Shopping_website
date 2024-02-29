@@ -1,0 +1,27 @@
+﻿@model List<ProductComplaint>
+
+	<table class="table table-primary">
+	<tr>
+		<th>#</th>
+		<th>Başlıq</th>
+		<th>Şəkil</th>
+		<th>Məzmun</th>
+		<th>Tarix</th>
+		<th>Davamı</th>
+		<th>Elana Get</th>
+		<th>Sil</th>
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+		<td>@item.ComplaintId</td>
+		<td>@item.Title</td>
+		<td>@item.ComplaintPhoto</td>
+		<td>@item.Content</td>
+		<td>@(((DateTime)item.ComplaintDate).ToString("dd-MMM-yyyy"))</td>
+		<td><a href="/Admin/ProductComplaint/ComplaintLong/@item.ComplaintId" class="btn btn-outline-info">Davamı</a></td>
+		<td><a href="/Product/Detail/@item.ProductId" class="btn btn-outline-primary">@item.ProductId</a></td>
+		<td><a href="/Admin/ProductComplaint/ComplaintRemove/@item.ComplaintId" class="btn btn-outline-danger">Sil</a></td>
+	</tr>
+	}
+	</table>

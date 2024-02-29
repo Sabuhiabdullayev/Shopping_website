@@ -1,0 +1,22 @@
+﻿@using EntityLayer.Concrete
+@model AppUser
+
+	
+		   <div class="MessageTopNameDiv">
+        <a href="#" class="MessageTopLeftExitBtn"><i class="fa-solid fa-circle-left MessageTopLeftExit"></i></a>
+        <img src="~/Shopping/MemberImg/@Model.ImageUrl" alt="" class="MessageTopImg">
+        <b class="MessageTopName">@Model.Name @Model.SurName</b>
+        <i class="fa-solid fa-bars MessageTopMenuIcon"></i>
+    </div>
+    <div class="MessageMenuDiv">
+        
+        <img src="~/Shopping/MemberImg/@Model.ImageUrl" class="MessageMenuImg" alt="">
+
+        <a href="/User/Profile/@Model.Id" class="MessageMenuName">@Model.Name @Model.SurName</a>
+        <div class="MessageMenuIcon">
+            <i class="fa fa-message "></i>
+            <i class="fa fa-phone "></i>
+            <i class="fa fa-video "></i>
+        </div> 
+    </div>
+	

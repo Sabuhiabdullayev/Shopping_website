@@ -1,0 +1,19 @@
+﻿@using Shopping.Areas.Admin.Models.Roles
+@model AddRoleViewModel
+@{
+    ViewData["Title"] = "Rol əlavə etmə form";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Rol Əlavə Etmə</h1>
+
+
+<form method="post">
+	<label>Role Adı</label>
+	<input type="text" asp-for="RoleName" class="form-control"/>
+	<br />
+	<button class="btn btn-outline-info">Role Əlavə Et</button>
+
+</form>
+<br />
+<a href="/Admin/AdminRoles/RoleList" class="btn btn-outline-primary">Role List</a>

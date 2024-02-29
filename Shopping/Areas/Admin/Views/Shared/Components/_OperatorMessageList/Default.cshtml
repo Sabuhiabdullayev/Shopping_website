@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<OperatorContact>
+
+@foreach (var x in Model)
+{
+
+
+	@if (@ViewBag.MemberId == x.AppUserId)
+	{
+		<li>
+			<div class="OperatorSendMessage">
+				<p class="OperatorSendContent">@x.ContactContent</p>
+				<span class="OperatorSendDate">@(((DateTime)x.ContactDate).ToString("dd-MMM-yyyy"))</span>
+			      <img src="./9a754bc8054bf9e1f97a9f65d4afac2e.jpg" class="OperatorOwnerImg" alt="">
+
+			</div>
+		</li>
+	}
+	
+	@if (@ViewBag.MemberId == x.MessageOwnerId)
+	{
+
+		<li>
+			<div class="MemberSendMessage">
+				<p class="MemberSendContent">@x.ContactContent</p>
+				<span class="MemberSendDate">@(((DateTime)x.ContactDate).ToString("dd-MMM-yyyy"))</span>
+			</div>
+		</li>
+
+	}
+
+}

@@ -1,0 +1,17 @@
+﻿
+
+@{
+    ViewData["Title"] = "Ana Sehife";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main>
+	@await Component.InvokeAsync("_LayoutUserListSlider")
+	    </main> 
+@*@await Component.InvokeAsync("_NavbarAds")
+*@
+@await Component.InvokeAsync("_VipProducts")
+<br />
+
+@await Component.InvokeAsync("_ProductList")
+
+

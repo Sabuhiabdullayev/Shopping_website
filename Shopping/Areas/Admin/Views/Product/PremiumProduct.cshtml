@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Premium Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4>Premium Elanlar</h4>
+<br />
+@await Component.InvokeAsync("_PremiumProductList")
+

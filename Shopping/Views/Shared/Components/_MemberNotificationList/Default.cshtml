@@ -1,0 +1,79 @@
+﻿@model List<Notification>
+
+  
+		 <div class="LayoutMemberBellCommentDiv">
+            <ul class="LayoutMemberBellCommentUl">
+           @foreach(var x in Model){
+                <li class="LayoutMemberBellCommentLi">
+               @if(x.NotificationStatus==true){
+                    <form asp-action="NotificationStatusFalse" asp-controller="Notification" asp-area="Member" method="post">
+                     <input type="hidden" name="id" value="@x.NotificationId" />
+                        <button class="LayoutMemberBellCommentContentLongRead">
+                            @if (!string.IsNullOrEmpty(x.Img))
+                            {
+                     <img src="~/Shopping/NotificationImg/@x.Img" alt="" class="LayoutMemberBellContentImg">
+
+                            }
+                            @if(x.Like==true || x.Comment == true)
+                            {
+                    <img src="~/Shopping/MemberImg/@x.AppUser.ImageUrl" class="LayoutMemberBellUserImg" alt="">
+                  <a href="/User/Profile/@x.AppUser.UserName" class="LayoutMemberBellUserName">@x.AppUser.Name @x.AppUser.SurName</a>
+                            }
+                  
+                    <p class="LayoutMemberBellCommentContent">
+                                @if(x.Like==true || x.Comment == true)
+                                {
+                                   <a href="/Product/Detail/@x.ProductId">@x.ProductName</a> 
+                                }
+                                @x.Title
+                                @if (x.Like == true)
+                                {
+                                  <i class="fa-regular fa-thumbs-up LayoutMemberBellUserLike"></i>  
+                                }
+                                @if (x.Comment == true)
+                                {
+                                   <i class="fa-regular fa-comment LayoutMemberBellUserLike"></i> 
+                                }
+                            </p>
+                      <span class="LayoutMemberBellCommentContentDate"> @(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</span>
+                </button>
+            </form>
+               }
+               else if(x.NotificationStatus==false){
+                     <form asp-action="NotificationStatusFalse" asp-controller="Notification" asp-area="Member" method="post">
+                     <input type="hidden" name="id" value="@x.NotificationId" />
+                         <button class="LayoutMemberBellCommentContentLongUnread">
+                            @if (!string.IsNullOrEmpty(x.Img))
+                            {
+                     <img src="~/Shopping/NotificationImg/@x.Img" alt="" class="LayoutMemberBellContentImg">
+
+                            }
+                            @if(x.Like==true || x.Comment == true)
+                            {
+                     <img src="~/Shopping/MemberImg/@x.AppUser.ImageUrl" class="LayoutMemberBellUserImg" alt="">
+                  <a href="/User/Profile/@x.AppUser.UserName" class="LayoutMemberBellUserName">@x.AppUser.Name @x.AppUser.SurName</a>
+                            }
+                  
+                    <p class="LayoutMemberBellCommentContent">
+                                @if(x.Like==true || x.Comment == true)
+                                {
+                                   <a href="/Product/Detail/@x.ProductId">@x.ProductName</a> 
+                                }
+                                @x.Title
+                                @if (x.Like == true)
+                                {
+                                  <i class="fa-regular fa-thumbs-up LayoutMemberBellUserLike"></i>  
+                                }
+                                @if (x.Comment == true)
+                                {
+                                   <i class="fa-regular fa-comment LayoutMemberBellUserLike"></i> 
+                                }
+                            </p>
+                      <span class="LayoutMemberBellCommentContentDate"> @(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</span>
+                </button>
+            </form>
+               }
+               </li>
+           } 
+            </ul>
+         </div>

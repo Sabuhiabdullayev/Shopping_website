@@ -1,0 +1,44 @@
+﻿@model Notification
+@{
+    ViewData["Title"] = "NotificationLong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <link rel="stylesheet" href="~/css/Notification/NotificationContent.css">
+
+<div class="Notification">
+    <button class="NotificationAllListShowBtn"><i class="fa fa-bell"></i></button>
+    <button class="NotificationAllListHideBtn"><i class="fa-solid fa-circle-xmark"></i></button>
+
+    <ul class="NotificationAllList" id="NotificationAllListUl">
+    @await Component.InvokeAsync("_MyNotificationAllList")
+    </ul>
+<div class="NotificationContentDiv">
+   @* @if(@ViewBag.id!=null){
+          <h6 class="NotificationShowTitle">@Model.Title
+            @if(@Model.Comment==true)
+            {
+                <i class="fa-regular fa-comment NotificationContentSenderIcon"></i>
+
+            }
+           else if (@Model.Like == true)
+            {
+               <i class="fa-regular fa-thumbs-up NotificationContentSenderIcon"></i>
+
+            }
+            </h6> <span class="NotificationShowSenderDate">@(((DateTime)Model.Date).ToString("dddd, dd-MMMM-yyyy/ hh:mm"))</span>
+
+          @await Component.InvokeAsync("_MyNotificationContentSendUser",new{id=@Model.AppUserId})
+            <p class="NotificationShowContent">  
+                @if(!string.IsNullOrEmpty(@Model.Img)){
+                <img src="~/Shopping/NotificationImg/@Model.Img" class="NotificationShowContentSenderImg">
+            }
+            @if (@Model.Comment == true)
+            {
+                <b>Bildirilmiş Rəy:  </b>
+            }
+           
+            @Model.Content</p>
+    }*@
+      
+    </div>
+</div>

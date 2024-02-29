@@ -1,0 +1,106 @@
+﻿
+@model List<Product>
+@{
+    ViewData["Title"] = "AllProducts";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="mr-4 ml-4">
+
+
+<h5>Bütün Elanlar</h5>
+
+<table class="table table-bordered" id="tbtAllProduct"> 
+	<tr>
+		<th>Elan Nömrəsi</th>
+		<th>Şəkil</th>
+		<th>Elan Adı</th>
+		<th>Sahibi</th>
+		<th>Qiymet</th>
+		<th>Şəhər</th>
+		<th>Tarixi</th>
+		<th>Status</th>
+		<th></th>
+		<th>Vip</th>
+		<th>Premium</th>
+		<th>Elanı Sil</th>
+    </tr>
+	@foreach (var item in Model)
+	{
+		@if(item.ProductStatus == "Active")
+		{
+			<tr >
+		<td>@item.ProductId</td>
+		<td><img src="~/Shopping/ProductImg/@item.Image1" style="width:70px"/></td>
+		<td>@item.ProductName</td>
+		<td>@item.ProductOwnerName</td>
+			<td>@item.Price</td>
+		<td>@item.City</td>
+		<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))
+			
+		</td>
+		<th class="text text-success">@item.ProductStatus</th>
+		
+		<td>
+			<form asp-action="ProductStatus" asp-controller="Product" asp-area="Admin" method="post">
+			<input type="hidden" name="ProductId" value="@item.ProductId" />
+					<input type="hidden" name="ProductStatus" value="Passive" />
+				<button class="btn btn-outline-danger">DeAktiv Et</button>
+		</form>
+		</td>
+
+		<td>@item.Vip</td>
+		<td>@item.Premium</td>
+<td><a class="btn btn-outline-danger"><i class="fa fa-trash "></i></a></td>
+    </tr>
+		}
+		@if(item.ProductStatus == "Passive")
+		{
+			<tr class="table table-danger">
+		<td>@item.ProductId</td>
+		<td><img src="~/Shopping/ProductImg/@item.Image1" style="width:70px"/></td>
+    	<td>@item.ProductName</td>
+		<td>@item.ProductOwnerName</td>
+			<td>@item.Price</td>
+		<td>@item.City</td>
+		<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+		<th class="text text-danger">@item.ProductStatus</th>
+		
+		<td>
+			<form asp-action="ProductStatus" asp-controller="Product" asp-area="Admin" method="post">
+			<input type="hidden" name="ProductId" value="@item.ProductId" />
+					<input type="hidden" name="ProductStatus" value="Active" />
+				<button class="btn btn-outline-success">Aktiv Et</button>
+		</form>
+		</td>
+
+		<td>@item.Vip</td>
+		<td>@item.Premium</td>
+	
+		<td><a class="btn btn-outline-danger"><i class="fa fa-trash "></i></a></td>
+    </tr>
+		}
+		
+
+	}
+
+</table>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap.min.js" integrity="sha512-F0E+jKGaUC90odiinxkfeS3zm9uUT1/lpusNtgXboaMdA3QFMUez0pBmAeXGXtGxoGZg3bLmrkSkbK1quua4/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+			   jQuery(document).ready(function($){
+				
+				   $('#tbtAllProduct').DataTable();
+	          $("#filters").submit(function(){
+				  $(this).find(":input").filter(function(){return !this.value;}).attr("disabled","disabled");
+			 return true;
+			  });
+			  $("form").find(":input").prop("disabled",false);
+			   });
+
+
+</script>

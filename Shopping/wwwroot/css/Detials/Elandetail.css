@@ -1,0 +1,735 @@
+
+a:hover{
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+}
+
+
+.ContanierElanDetail .DefaultDetail{
+  
+    position: relative;
+margin-top: 10px;
+   width: 1250px;
+  
+    left: 50%;
+    height: auto;
+    transform: translate(-50%);
+background: rgb(252, 252, 252);
+overflow: hidden;
+
+    
+}
+ .ContanierElanDetail .DefaultDetail .ImgDiv{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(126, 123, 119);
+    
+}
+
+.Contanier .Default .FooterListDetail{
+   position: relative;
+    width: 100%;
+    height: 100%;
+  
+  
+}
+.FooterListDetail .PriceProducNameDetail{
+   position: relative;
+    width: 100%;
+    height: 130px;
+    background: rgb(226, 226, 226);
+
+}
+.PriceProducNameDetail .PriceDiv{
+    position: relative;
+    top: 0.6rem;
+    left: 10%;
+    padding: 1%;
+    margin-bottom: 3px;
+    width: 200px;
+    height:85px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+
+.PriceProducNameDetail .PriceDiv .Price{
+   
+    width: 100%;
+    height: 100%;
+    font-size:30px;
+    font-style:unset;
+
+   
+}
+.PriceProducNameDetail .ProductNameDiv{
+position: relative;
+padding: 1%;
+top: -110px;
+left: 30%;
+width: 700px;
+
+
+
+}
+.PriceProducNameDetail .ProductNameDiv .ProductName{
+   position: relative;  
+  
+    width: 100%;
+    
+    
+    top: 40px;
+    font-size: 23px;
+}
+ .FooterListDetail .PhoneDiv{
+    position: absolute;
+    
+    padding-top:10px;
+    padding-left: 5px;
+    left:20px;
+   top: 600px;
+    width:280px;
+    height: 150px;
+    border-radius: 3%;
+    background: rgb(255, 254, 254);
+    box-shadow: 0 0 10px rgb(210, 210, 144);
+    text-shadow: 1px 1px 1px rgb(240, 209, 9);
+
+}
+
+ .DetailPremium{
+    position: absolute;
+    top: 100px;
+    right: -170px;
+    width: 380px;
+
+    border-radius: 4%;
+    text-decoration: none;
+ 
+}
+.DetailVip{
+    position: absolute;
+    top: 90px;
+    right: 200px;
+    width: 320px;
+
+    border-radius: 4%;
+    
+
+}
+.fa-arrow-up{
+    position: relative;
+    margin-right: 10px;
+    color: rgb(56, 204, 98);
+    font-size: 20px;
+    animation: icon 0.5s ease-in-out infinite;
+}
+
+.DetailPremium .PremiumName{
+    position: absolute;
+    padding-top: 11px;
+   margin-left: 20px;
+    text-decoration: none;
+    
+    color:black;
+}
+
+.DetailVip .VipName{
+    position: absolute;
+padding-top: 20px;
+padding-left: 9px;
+    text-decoration: none;
+    
+    color:black;
+    
+}
+.DetailVip:hover{
+    cursor: pointer;
+
+    color:black;
+}
+.DetailPremium:hover{
+    cursor: pointer;
+
+  
+    color:black;
+}
+.VipPremiumImg{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.FooterListDetail .PhoneDiv .OwnerNameSpan{
+   font-size: 15px;
+}
+.FooterListDetail .PhoneDiv .OwnerName{
+    position: relative;
+    font-size: 20px;
+    left: 5px;
+    text-decoration: none;
+    color: black;
+    
+}
+.PhoneDiv .Confirmed{
+    margin-left: 5px;
+    font-size: 12px;
+}
+.PhoneDiv .Tooltip{
+  margin-left: 3px;
+    padding: 5px;
+    font-size: 13px;
+    color: blue;
+    border-radius: 7px;
+    background-color:rgb(233, 233, 255) ;
+    opacity:0 ;
+}
+.PhoneDiv .Confirmed:hover{
+    color: blue;
+    cursor: pointer;
+}
+.PhoneDiv .Confirmed:hover ~.Tooltip{
+    opacity: 1;
+    
+}
+.FooterListDetail .PhoneDiv .PhoneSpan{
+    position: relative;
+    top: 25px;
+   font-size: 15px;
+}
+.FooterListDetail .PhoneDiv .PhoneAll{
+    position: relative;
+    font-size: 20px;
+    left: 3rem;
+}
+.FooterListDetail .PhoneDiv .PhoneAll .Phone2{
+    position: relative;
+   top: 6px;
+}
+.FooterListDetail .ProductDescription
+{
+position: relative;
+
+margin-left: 25%;
+padding: 30px;
+top: -22%;
+
+height: 100%;
+
+}
+.ProductDescription .ListDiv
+{
+    margin: 2%;
+}
+
+
+.ListDiv .ListSpan
+{
+    position: relative;
+margin-right: 40px;
+font-size: 19px;
+}
+.ListDiv .List
+{
+margin-left: 25px;
+font-size: 20px;
+}
+
+
+ 
+.ListDiv .Description
+{
+    position: relative;
+    padding: 7px;
+    margin-bottom: 10%;
+    width:700px ;
+    height: auto;
+    overflow: hidden;
+    font-size: 20px;
+
+    
+} 
+.ProductDescriptionFooterDiv{
+    position: relative;
+    background-color: rgb(34, 211, 255);
+    width: 550px;
+    padding: 15px;
+    border-radius: 10px;
+    left: 50px;
+}
+.ProductDescriptionFooterDiv .ProductDescriptionFooterHelp{
+    color: rgb(79, 52, 52);
+}
+.ProductDescriptionFooterDiv .ProductDescriptionFooterHelp .fa-exclamation{
+    position: relative;
+    margin-right: 10px;
+    animation:  Help 2s infinite;
+}
+@keyframes Help{
+    0%{
+        transform: scale(1.0);
+
+    }
+    100%{
+        transform: scale(2.0);
+        color: red;
+    }
+}
+.DescriptionReadMore{
+    position: relative;
+    top: -80px;
+    padding: 4px;
+    margin-left: 610px;
+    border: none;
+    background-color: rgb(222, 204, 204);
+    border-radius: 4px;
+    color: rgb(2, 2, 227);
+}
+.Default .CommentDiv{
+    position: relative;
+    margin-top: 7%;
+    padding: 1rem;
+   width: 100%;
+   height: 100%;
+    background: rgb(239, 237, 237);
+}
+
+
+.ProductViewDiv{
+    position: absolute;
+    padding: 5px;
+    top: 800px;
+    left: 30px;
+    width: 25%;
+    font-size: 17px;
+
+}
+.SelectProduct{
+    position: relative;
+    left: -5px;
+    padding: 2px;
+    margin-bottom: 6px;
+    color: black;
+    text-decoration: none;
+    border: none;
+    background: none;
+
+}
+.HashtagView{
+    font-size: 15px;
+}
+.SelectProduct .HeartWarning{
+    margin-bottom: 10px;
+    margin-left: 2px;
+    font-size: 20px;
+    color: red;
+    
+}
+
+.SelectProduct:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.SelectProduct:hover .HeartWarning{
+    color: rgb(232, 17, 17);
+    cursor: pointer;
+}
+.LikeButton{
+    position: relative;
+    margin-left:5px;
+}
+
+.ProductViewDiv .ProductId{
+    position: relative;
+    margin-bottom: 8px;
+}
+.CommentDiv{
+    position: relative;
+width: 620px;
+background-color: rgb(213, 213, 213);
+margin-top: 40px;
+left: 50%;
+margin-left: 50px;
+transform: translate(-50%);
+/* padding: 5px; */
+border-radius: 10px;
+}
+.CommentUl{
+    position: relative;
+    padding-top: 80px;
+    top: -20px;
+    left: -5px;
+    width: 620px;
+    max-height: 700px;
+    overflow: auto;
+}
+.CommentUl::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+}
+.CommentUl::-webkit-scrollbar-thumb{
+    background-color: aqua;
+}
+.Commentli{
+    position: relative;
+    list-style: none;
+    top: -60px;
+    margin-top: 20px;
+}
+.CommentOwnerImg{
+    position: relative;
+    top: -20px;
+    left: -70px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.CommentOwnerName{
+    position: relative;
+   left: -65px;
+    top: -15px;
+    color: black;
+}
+.CommentOwnerConfirmed{
+    position: relative;
+    margin-left: 3px;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+.CommentOwnerTooltip{
+    position: absolute;
+   top: -18px;
+   left: 70px;
+    width: 90px;
+    background-color: rgb(182, 182, 182);
+opacity: 0.8px;
+color: rgb(8, 4, 254);
+padding: 2px;
+border-radius: 5px;
+display: none;
+
+}
+.CommentOwnerConfirmed:hover{
+    color: blue;
+}
+.CommentOwnerConfirmed:hover ~.CommentOwnerTooltip{
+    display: block;
+}
+.CommentSendDate{
+    position: relative;
+top: -15px;
+    left: 460px;
+}
+.CommentContent{
+    position: relative;
+    width: 500px;
+    height: 100%;
+    background-color: aliceblue;
+    padding: 10px;
+    top: -15px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+.CommentSendInput{
+    position: relative;
+    top: 0px;
+    margin: 10px;
+    left: 25px;
+    list-style: none;
+}
+.CommentSendInput{
+    position: relative;
+    padding: 12px 60px 12px 15px;
+    width: 530px;
+    margin-left: -10px;
+    font-size: 17px;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.CommentSendInput:focus{
+    border: none;
+    outline: none;
+}
+.CommentSendBtn{
+    position: relative;
+    margin-left: 485px;
+    top: -60px;
+    width: 60px;
+    height: 49px;
+border-radius: 0 30px 30px 0;
+border: none;
+
+}
+.fa-right-to-bracket{
+    position: relative;
+    font-size: 25px;
+    padding: 10.3px;
+}
+.fa-right-to-bracket:hover{
+    color: blue;
+    cursor: pointer;
+}
+.CommentCountLi{
+position: relative;
+top: -90px;
+left: 50px;
+list-style: none;
+}
+.CommentCount{
+    position: relative;
+    top: 40px;
+}
+.CommentTopName{
+    position: relative;
+    text-align: center;
+}
+.FooterGetList{
+    position: relative;
+    width:1200px;
+    min-height: 400px;
+    max-height: auto;
+    left: 20px;
+    background-color: rgb(255, 255, 255);
+ 
+    margin: 0 0 10px 0;
+}
+.FooterGetList .FooterGetListName{
+    position: relative;
+
+    left: 70px;
+}
+@media only screen and (max-width: 658px) {
+   
+    .ContanierElanDetail .DefaultDetail{
+  
+        position: relative;
+        padding: 3px;
+        width: 480px;
+        left: 50%;
+       min-height: 3000px;
+       max-height: auto;
+        overflow: hidden;
+        overflow-y: auto;
+        transform: translate(-50%);
+    background: rgb(252, 252, 252);
+    
+        
+    }
+    
+    
+    .PriceProducNameDetail .PriceDiv{
+        position: relative;
+        left: -1px;
+        padding: 1%;
+        width: 160px;
+        height:80px;
+        
+        border-radius: 5px;
+        text-align: center;
+        
+        
+    }
+    .FooterListDetail .PriceProducNameDetail{
+        position: relative;
+         width: 100%;
+         height: 100px;
+         background: rgb(226, 226, 226);
+     
+     }
+     .FooterListDetail .PhoneDiv{
+    position: relative;
+    top:650px;
+    width: 430px;
+    height: 60px;
+   
+    }
+    .PriceProducNameDetail .PriceDiv .Price{
+        font-size: 25px;
+    }
+    .PriceProducNameDetail .ProductNameDiv .ProductName{
+        position: relative;  
+        padding: 1rem;
+         width: 100%;
+         height: 100%;
+         margin-left: 10px;
+         top: 55px;
+         font-size: 15px;
+     }
+     .FooterListDetail .PhoneDiv .PhoneAll{
+        position: absolute;
+        font-size: 15px;
+        top: 5px;
+        margin-left: 220px;
+    }
+    .FooterListDetail .PhoneDiv .PhoneSpan{
+        position: absolute;
+        top: 7px;
+        left: 210px;
+       font-size: 15px;
+    }
+    .PriceProducNameDetail .ProductNameDiv{
+        position: relative;
+        padding: 1%;
+        top: -110px;
+        left: 30%;
+        width: 300px;
+        }
+        .OwnerNameSpan{
+            position: relative;
+            
+            left: 10px;
+        }
+        .OwnerName{
+      position: relative;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+        }
+        .Tooltip{
+            position: absolute;
+            top: -30px;
+            left: 150px;
+            opacity: 0.8;
+            
+        }
+    .ContanierElanDetail .DefaultDetail .ImgDiv{
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+        height: 300px;
+        background-color: rgb(126, 123, 119);
+        
+    }
+    .DetailVip{
+        position: absolute;
+        top: 860px;
+        left: -105px;
+    }
+    .DetailPremium{
+        position: absolute;
+        top: 930px;
+        left: -105px;
+    }
+    .ProductViewDiv{
+        position: relative;
+        top: 850px;
+        width: 400px;
+    }
+   
+    .FooterListDetail .ProductDescription
+    {
+    position: absolute;
+margin-top: 400px;
+    margin-left:30px;
+    padding-bottom: 30px;
+    height: 610px;
+    top: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    
+    }
+   .ProductDescription::-webkit-scrollbar{
+    display: none;
+   }
+    .ListSpan{
+        margin-right: 30px;
+    }
+    .ListDiv .Description
+    {
+        position: relative;
+        padding: 7px;
+        margin-bottom: 10%;
+        width:400px ;
+        overflow: hidden;
+        font-size: 20px;
+    
+        
+    } 
+    .DescriptionReadMore{
+        position: relative;
+        top: -40px;
+        padding: 3px;
+        margin-left:280px;
+        font-size: 16px;
+        border: none;
+        background-color: rgb(222, 204, 204);
+        border-radius: 4px;
+        color: rgb(2, 2, 227);
+    }
+    .CommentDiv{
+        position: relative;
+    width: 420px;
+    background-color: rgb(213, 213, 213);
+    top: 850px;
+    margin-left: 1px;
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+    .CommentUl::-webkit-scrollbar{
+        width: 6px;
+        height: 6px;
+        border-radius: 10px;
+    }
+    .CommentUl{
+        position: relative;
+        height: 400px;
+    }
+    .CommentUl::-webkit-scrollbar-thumb{
+   background-color: rebeccapurple;
+    }
+    .Commentli{
+        position: relative;
+        left: -30px;
+        list-style: none;
+        top: -60px;
+    }
+    .CommentSendInput{
+        width: 350px;
+        left: 15px;
+
+    }
+    .CommentSendBtn{
+        margin-left: 295px;
+    }
+    .CommentContent{
+        width: 330px;
+    }
+    .CommentSendDate{
+        left: 300px;
+    }
+    .FooterGetList{
+        position: relative;
+        width:430px;
+   
+    max-height: auto;
+        
+        top: 940px;
+      
+    }
+    .FooterGetList .FooterGetListName{
+        position: relative;
+        top: -40px;
+        left: 30px;
+    }
+    .ProductDescriptionFooterDiv{
+        position: relative;
+        background-color: rgb(34, 211, 255);
+        width: 400px;
+        padding: 20px;
+        left: -12px;
+        border-radius: 10px;
+    }
+}

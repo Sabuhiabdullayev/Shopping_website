@@ -1,0 +1,73 @@
+﻿@model Ads
+@{
+
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 style="text-align:center">Reklamda Düzəliş Etmək</h3>
+<div class="ml-3 mr-3">
+
+	<form asp-action="AdvertUpdate" asp-controller="Ads" asp-area="Admin" enctype="multipart/form-data" method="post">
+		<div class="form-group ml-3 mr-3">
+			<label>Ad</label>
+			<input type="text" name="Name" value="@Model.Name" class="form-control" required />
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<label>Soyad</label>
+			<input type="text" name="SurName" value="@Model.SurName" class="form-control" required />
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<label>Email</label>
+			<input type="email" name="Email" value="@Model.Email" class="form-control" required />
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<label>Telefon</label>
+			<input class="form-control" name="Phone" id="phone"
+				   type="tel"
+				   value="@Model.Phone"
+				   pattern="^\+994(\s+)?\(?(77|70|50|55|51)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+				   required>
+		</div>
+		<div class="form-group ml-3 mr-3">
+			<label>Şəkil 1</label>
+			<input type="file" name="Img1" value="@Model.Img1" class="form-control" required />
+			<img src="~/Shopping/NavbarAds/@Model.Img1" class="ml-6 mr-6" alt="" style="width:200px;height:100px;" />
+		</div>
+		<div class="form-group ml-3 mr-3">
+			<label>Şəkil 2</label>
+			<input type="file" name="Img2" value="@Model.Img2" class="form-control" required />
+			<img src="~/Shopping/NavbarAds/@Model.Img2" class="ml-6 mr-6" alt="" style="width:200px;height:100px;" />
+
+		</div>
+		<div class="form-group ml-3 mr-3">
+			<label>Şəkil 3</label>
+			<input type="file" name="Img3" value="@Model.Img3" class="form-control" required />
+			<img src="~/Shopping/NavbarAds/@Model.Img3" class="ml-6 mr-6" alt="" style="width:200px;height:100px;" />
+
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<label>Reklam Başlama Tarixi</label>
+			<input type="date" name="StartDate" value="@Model.StartDate" class="form-control" required />
+			<span>@(((DateTime)Model.StartDate).ToString("dd-MMM-yyy"))</span>
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<label>Reklam Bitme Tarixi</label>
+			<input type="date" name="ExpiryDate" value="@Model.ExpiryDate" class="form-control" required />
+			<span>@(((DateTime)Model.ExpiryDate).ToString("dd-MMM-yyyy"))</span>
+		</div>
+
+		<div class="form-group ml-3 mr-3">
+			<button class="btn btn-outline-primary">Reklam Düzəliş Et</button>
+		</div>
+	</form>
+	<a href="/Admin/Ads/AdsList" class="btn btn-outline-warning ml-3 mr-3">Reklam List</a>
+
+	<script src="~/js/ProductAdd/ProductAdd.js"></script>
+
+</div>
+

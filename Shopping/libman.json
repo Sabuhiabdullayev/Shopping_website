@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.2.2",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "js/bootstrap.min.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "datatables.net@1.13.6",
+      "destination": "wwwroot/lib/datatables.net/"
+    }
+  ]
+}

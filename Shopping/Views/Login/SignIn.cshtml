@@ -1,0 +1,42 @@
+﻿
+@model SignInViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş</title>
+    <link rel="stylesheet" href="~/css/Login/SignInExample.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="SignInContanier">
+      <div class="SignInContent">
+        <nav class="SignInNavbar"><h3>Giriş</h3></nav>
+        <form method="post">
+       <li class="SignInInputDiv"> 
+       <i class="fa fa-user SignInIcon"></i>
+        <input type="text" class="SignInInput" asp-for="UserName" placeholder="IstifadeciAdi" required>
+    </li>
+     <li class="SignInInputDiv"> 
+        <i class="fa fa-lock SignInIcon"></i>
+        <input type="password" asp-for="Password" class="SignInInput" id="SignInPasswordInput" placeholder="Sifre" required>
+        <i class="fa-sharp fa-solid fa-eye SignInPasswordShow"></i>
+    </li>
+    <button class="SignInBtn">Giriş</button>
+    
+        <a href="/Login/SignUp/" class="SignInSignUp">Qeydiyyatdan Keç</a>
+      </form>
+      </div>
+    </div>
+    <script src="~/js/Login//SignInExample.js"></script>
+</body>
+</html>
+

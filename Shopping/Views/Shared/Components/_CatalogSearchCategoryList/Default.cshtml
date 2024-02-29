@@ -1,0 +1,14 @@
+﻿@model List<Category2>
+
+	  <ul class="List">
+          
+	@foreach(var x in Model){
+          <li>
+                <form action="" method="get">
+                    <input type="hidden">
+                    <button class="CategoryBtn">@x.Category2Name</button>
+                </form>
+           </li>
+	} 
+    </ul>
+      

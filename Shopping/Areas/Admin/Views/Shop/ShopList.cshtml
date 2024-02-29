@@ -1,0 +1,73 @@
+﻿
+@{
+   
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h5>Mağazalar</h5>
+<br />
+
+
+      
+
+   <table class="table table-bordered">
+		<tr>
+		<th>#</th>
+		<th>Şəkil</th>
+		<th>Mağaza Adı</th>
+		<th>Tel</th>
+		<th>Açma Tarix</th>
+		<th>Status</th>
+		<th>Icon Status</th>
+	
+		<th>Mağazayı Sil</th>
+		</tr>
+
+		@foreach(var x in Model)
+	{
+	
+		
+<tr>
+		<td>@x.Id</td>
+			<td><img src="~/Shopping/MemberImg/@x.ImageUrl" style="width:70px"/></td>
+			<td><a href="/Shop/InShop/@x.ShopName" class="btn btn-outline-info">@x.ShopName</a></td>
+			<td>@x.ShopPhone</td>
+			<td>@(((DateTime)x.ShopDate).ToString("dd-MMM-yyyy"))</td>
+			
+			<td>
+				@if(x.ShopStatus=="Active"){
+					<form asp-action="ShopStatusActive" asp-controller="Shop" asp-area="Admin" method="post" >
+				<input type="hidden" value="@x.Id" name="UserId" />
+				<input type="hidden" value="Passive" name="UserStatus" />
+					<button class="btn btn-outline-warning">Passiv Et</button> 
+					</form>
+				}else if (x.ShopStatus == "Passive")
+				{
+					<form asp-action="ShopStatusActive" asp-controller="Shop" asp-area="Admin" method="post" >
+				<input type="hidden" value="@x.Id" name="UserId" />
+				<input type="hidden" value="Active" name="UserStatus" />
+					<button class="btn btn-outline-success">Aktiv Et</button> 
+					</form>
+				}
+
+			</td>
+			<td>@x.ShopConfirmed </td>
+			<td> <a href="#" class="btn btn-outline-danger">Sil</a></td>
+
+		</tr>
+		
+
+	}
+	
+</table>
+
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("UserList",new{page}),new PagedListRenderOptions{
+		LiElementClasses=new List<string>
+		{"page-link"}
+	})
+
+
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

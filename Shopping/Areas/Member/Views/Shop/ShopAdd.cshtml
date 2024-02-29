@@ -1,0 +1,42 @@
+﻿@model ShopViewModel
+@{
+    ViewData["Title"] = "Mağaza Oluşdurma";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if(ViewBag.ShopName != null)
+{
+
+<h3>Mağazanız Mevcuddur...</h3>
+<br/>
+<a href="/Member/Shop/Update" class="btn btn-outline-info">Mağazayı Düzənləmə</a>
+<button class="btn btn-outline-danger">Mağazayı Silme</button>
+}
+else
+{
+<h3>Mağaza Oluşdurma</h3>
+<br />
+<form asp-action="ShopAdd" asp-controller="Shop" asp-area="Member" enctype="multipart/form-data" method="post">
+    <label>Mağaza Adı</label>
+	<input type="text" asp-for="ShopName" class="form-control" required/><br />
+     
+	<label>Əlaqə Nömrəniz</label>
+	 <input class="form-control Input" asp-for="ShopPhone" id="phone" 
+                    type="tel" 
+                    name="phone" 
+                    value="+994 (__) ___-__-__" 
+                    pattern="^\+994(\s+)?\(?(77|70|50|55|51)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+                    required>
+	<br />
+     <label>Mağöaza Haqqında</label>
+     <textarea asp-for="ShopDescription" class="form-control"></textarea>
+	
+	<label>Mağaza Şəkili</label>
+	<input type="file" asp-for="ShopSmallImage" class="form-control" /><br />
+     <label>Mağaza arxa plan Şəkili</label>
+	<input type="file" asp-for="ShopBigImage" class="form-control" /><br />
+	<button type="submit"  class="btn btn-primary form-control">Oluşdur</button>
+</form>
+}
+
+
+ <script src="~/js/ProductAdd/ProductAdd.js"></script>

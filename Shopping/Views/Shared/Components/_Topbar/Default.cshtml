@@ -1,0 +1,30 @@
+﻿    <div class="Topbar">
+        
+        <span class="LayoutTapbarPhone">Dəstək:(+99477-526-52-24)</span>
+        <div class="TopbarLanguageDiv">
+            <select class="TopbarLanguage">
+                <option value="1">Az</option>
+                <option value="1">Eng</option>
+                <option value="1">Rus</option>
+            </select>
+        </div>
+        <a href="/Member/Message/Chat/" class="LayoutTopbarHelp"><i class="fa fa-headset"></i></a>
+        <a class="LayoutNotification"><i class="fa fa-bell"></i>
+            @if (User.Identity.IsAuthenticated)
+        {
+             
+            @await Component.InvokeAsync("_MemberNotificationCount")
+        }
+           </a>
+       
+      	@if (User.Identity.IsAuthenticated)
+				{
+					@await Component.InvokeAsync("_LayoutAuthenticationTapBarNameImg_COM")
+				}
+				else
+				{
+					<a href="/Login/SignIn/" class="MemberSignIn"><i class="fa-regular fa-circle-user"></i> <b>Giriş</b></a>
+
+				}
+    
+    </div>

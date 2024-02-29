@@ -1,0 +1,25 @@
+﻿@model List<AppUser>
+
+	  @foreach (var item in Model)
+         {
+             
+
+
+<div class="card">
+    <a href="/Shop/InShop/@item.ShopName" class="MemberListA">
+        <img src="~/Shopping/ShopBigImg/@item.ShopBigImage" alt="" class="BigImg">
+        <img class="MemberListImg" src="~/Shopping/ShopSmallImg/@item.ShopSmallImage" alt="">
+        <b class="MemberListName">@item.ShopName 
+                @if(item.ShopConfirmed == "Təsdiqləndi")
+                {
+              <i class="fa-solid fa-store MemberListConfim" style=" color: #174aff;"></i> <span class="Toolktip">Təsdiqləndi</span>
+ 
+                }
+                </b>
+        <b class="MemberListPhone">@item.ShopPhone</b>
+        <b class="MemberListProductNumber">Mağazada: @await Component.InvokeAsync("_ShopListProductCount",new{id=@item.Id}) Elan var</b>
+        
+        <b class="MemberListDate">@(((DateTime)item.ShopDate).ToString("dd-MMM-yyyy"))</b>
+    </a>
+</div>
+}

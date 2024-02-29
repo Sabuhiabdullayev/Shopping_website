@@ -1,0 +1,42 @@
+﻿@model List<Product>
+
+	@if(@Model.Count()==0){
+		<h3>Premium Gözləyən Elan Yoxdur...</h3>
+}else{
+	<h5>Premium Gözləyən Elan Sayısı (@Model.Count())</h5>
+<br />
+<table class="table table-bordered">
+	<tr>
+		<th>Elan N:</th>
+		<th>Elan Sahibi</th>
+		<th>Elan Adi</th>
+		<th>Şəhər</th>
+		<th>tarix</th>
+		<th>Premium</th>
+		<th>Elana Göz At</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.ProductId</td>
+			<td>@item.ProductOwnerName</td>
+			<td>
+				@if(item.ProductName!=null)
+				{
+					@item.ProductName
+				}
+				@if(item.CarMake !=null)
+				{
+					@item.CarMake
+				}
+			
+			</td>
+			<td>@item.City</td>
+			<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+			<td>@item.Premium <a href="#">  Premium</a></td>
+			<td><a href="#" class="btn btn-outline-primary" >Göz At</a></td>
+		</tr>
+	}
+</table>
+}

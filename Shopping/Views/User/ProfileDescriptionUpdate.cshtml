@@ -1,0 +1,20 @@
+﻿@model AppUser
+
+
+<form asp-action="ProfileDescriptionUpdate" asp-controller="User" method="post" >
+<ul class="Update">
+            <li>
+                <h4>Haqqinda</h4>
+                <textarea  cols="50" rows="10" name="MemberDescription">@Model.MemberDescription</textarea>
+            </li>
+            <li>
+                <h4>Web Saytlar</h4>
+             Web Saytiniz   <li><input type="text" name="MemberSpecialWebSite" value="@Model.MemberSpecialWebSite"></li>
+              Facebook  <li><input type="text" name="MemberFacebookWebSite" value="@Model.MemberFacebookWebSite"></li>
+              Instagram  <li><input type="text" name="MemberInstagramWebSite" value="@Model.MemberInstagramWebSite"></li>
+              TikTok  <li><input type="text" name="MemberTiktokWebSite" value="@Model.MemberTiktokWebSite"></li>
+    
+            </li>
+        </ul>
+        <button class="MemberDescriptionWebSiteUpdateSet">Duzenleme Et</button>
+        </form>

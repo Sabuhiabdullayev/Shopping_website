@@ -1,0 +1,39 @@
+﻿@model List<Product>
+
+	@if(@Model.Count()==0){
+		<h3>Vip Gözləyən Elan Yoxdur...</h3>
+}else{
+	<h5>Vip Gözləyən Elan Sayısı (@Model.Count())</h5>}
+	<table class="table table-bordered">
+
+	<tr>
+		<th>Elan Nomresi</th>
+		<th>Sahibi</th>
+		<th>Şəkil</th>
+		<th>Elan Adı</th>
+		<th>Şəhər</th>
+		<th>Vip Status</th>
+		<th></th>
+		<th> Tarix</th>
+		<th>Elana Göz At</th>
+
+	</tr>
+	@foreach (var item in Model)
+	{
+
+	<tr>
+		<td>@item.ProductId</td>
+		<td>@item.ProductOwnerName</td>
+		<td><img src="~/Shopping/ProductImg/@item.Image1" style="width:70px" /></td>
+		<td>@item.ProductName</td>
+			
+		<td>@item.City</td>
+		<td>@item.Vip</td>
+		<td><button class="btn btn-outline-success">Vip Et</button></td>
+		<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+		<td><a class="btn btn-outline-info">Göz at</a></td>
+
+	</tr>
+	}
+	</table>
+	

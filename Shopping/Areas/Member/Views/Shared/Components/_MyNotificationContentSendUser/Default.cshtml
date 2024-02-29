@@ -1,0 +1,7 @@
+﻿@model AppUser
+
+ <span><img src="~/Shopping/MemberImg/@Model.ImageUrl" class="NotificationContentOwnerImg"> <a href="@Model.UserName" class="NotificationShowSenderOwnerName">@Model.Name @Model.SurName</a>
+	 @if(@Model.confirmed =="Təsdiqləndi"){
+	 <i class="fa-solid fa-circle-check NotificationSenderShowConfirmed"></i>
+	 }
+	 </span>

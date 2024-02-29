@@ -1,0 +1,7 @@
+﻿@model AppUser
+
+<span class="OwnerNameSpan">Elan Sahibi:</span> <a href="/User/Profile/@Model.UserName" data-id="@Model.Id" class="OwnerName">@Model.Name</a>
+@if(Model.confirmed=="Təsdiqləndi"){
+	  <i class="fa fa-check-circle Confirmed"></i>
+          <span class="Tooltip">Təsdiqləndi</span>
+}

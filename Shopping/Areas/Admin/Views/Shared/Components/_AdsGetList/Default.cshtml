@@ -1,0 +1,40 @@
+﻿@model List<Ads>
+
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>Ad</th>
+			<th>Soyad</th>
+			<th>Şəkil 1</th>
+			<th>Şəkil 2</th>
+			<th>Şəkil 3</th>
+			<th>Reklam Tarixi</th>
+			<th>Başlama Tarix</th>
+			<th>Bitmə Tarix</th>
+			<th>Reklam Status</th>
+			<th>Reklam Dəyiş</th>
+			<th>Sil</th>
+		</tr>
+		@foreach (var item in Model)
+		{
+	
+<tr class="table table-danger">
+			<td>@item.AdsId</td>
+			<td>@item.Name</td>
+			<td>@item.SurName</td>
+			<td><img src="~/Shopping/NavbarAds/@item.Img1" style="width:70px"/></td>
+			<td><img src="~/Shopping/NavbarAds/@item.Img2" style="width:70px"/></td>
+			<td><img src="~/Shopping/NavbarAds/@item.Img3" style="width:70px"/></td>
+			<td>@(((DateTime)item.AdsDate).ToString("dd-MMM-yyyy"))</td>
+			<td>@(((DateTime)item.StartDate).ToString("dd-MMM-yyyy"))</td>
+			<td>@(((DateTime)item.ExpiryDate).ToString("dd-MMM-yyyy"))</td>
+			<th>@item.AdsStatus 
+				
+			</th>
+			<td><a href="/Admin/Ads/Update/@item.AdsId"class="btn btn-outline-info">Dəyiş</a></td>
+			<td><a href="/Admin/Ads/AdsDelete/@item.AdsId" class="btn btn-outline-danger">Sil</a></td>
+		</tr>
+			}
+		}
+	</table>
+<a href="/Admin/Ads/AddAdvert" class="btn btn-outline-primary">Reklam Əlavə Et</a>

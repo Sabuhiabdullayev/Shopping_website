@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div style="padding-left:30px;"> 
+	<h3>Katalog və Kategoriya Silme </h3>
+<div class="row">
+	<div class="card mr-2" style="width:380px;">
+		<h5 class="ml-10">Katalog Silmə</h5>
+		<span>Kataloglar</span>
+		<select class="form control" id="Catalogs" asp-items="ViewBag.catalog">
+			<option>Catalog</option>
+				</select>
+			<br />
+			<span>Silinəcək Katalog Adı</span>
+			<input type="text" class="text-danger form-control" id="txtNewCatalog" />
+			<br />
+			<button class="btn btn-outline-danger" id="btnNewCatalog">Katalog Silmə</button>
+	
+	</div>
+	<div class="card mr-2" style="width:380px;">
+			<h5 class="ml-10">Kategoriya Silmə</h5>
+		<span>Katalog</span>
+		<select class="form control Catalog" asp-items="ViewBag.catalog" id="Catalog2">
+			<option>Catalog</option>
+			</select>
+		<span>Kategoriya</span>
+			<select class="form control" id="Category22">
+			<option>Kategoriya</option>
+			</select>
+			<br />
+			<span>Silinəcək Kategoriya Adı</span>
+			<input type="text" class="text-danger form-control" id="txtNewCategory1" />
+		<br />
+			<button class="btn btn-outline-danger" id="btnNewCategory1">Kategoriya Silmə</button>
+		
+	</div>
+	<div class="card" style="width:380px;">
+			<h5 class="ml-10">Kategoriya Silmə</h5>
+		<span>Katalog</span>
+		<select class="form control" asp-items="ViewBag.catalog" id="Catalog">
+			<option>Catalog</option>
+			</select>
+		<span>Kategoriya</span>
+			<select class="form control Category23" id="Category2">
+			<option>Kategoriya</option>
+			</select>
+			<span>Kategoriya</span>
+			<select class="form control" id="Category3">
+			<option>Kategoriya</option>
+			</select>
+			<br />
+			<span>Silinəcək Kategoriya Adı</span>
+			<input type="text" class="text-danger form-control" id="txtNewCategory2" />
+			<br />
+			<button class="btn btn-outline-danger" id="btnNewCategory2">Kategoriya Silmə</button>
+	</div>
+
+</div>
+</div>
+	<a href="/Admin/CatalogWithCategory/Insert/" class="btn btn-outline-primary ml-4" >Yeni Kategoriya</a>
+	<a href="/Admin/CatalogWithCategory/Remove/" class="btn btn-outline-danger mr-4" >Silmə</a>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>		
+<script src="~/lib/jquery/dist/jquery.js"></script>	
+	<script src="~/Admin/dist/js/CatalogWithCategory/Remove.js"></script>

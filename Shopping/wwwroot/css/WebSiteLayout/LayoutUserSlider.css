@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+.LayoutUserSliderDiv {
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding: 13px 5px;
+    height: 110px;
+}
+
+
+.LayoutUserSliderList {
+	position: relative;
+    padding: 0%;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 0;
+	cursor: pointer;
+	
+
+}
+
+.SliderUserListItem {
+    position: relative;
+	display: inline-block;
+	margin-left: 40px;
+	user-select: none;
+    list-style: none;
+	width: 80px;
+	height: 80px;
+    border-radius: 50%;
+
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 130px; 
+	
+
+}
+.SliderUserListItem .LayoutUserListItemImg{
+    position:relative;
+    padding: 5px;
+	top: -28px;
+    background:linear-gradient(#e66465,#9198e5,red);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.LayoutUserListItemName{
+    position: relative;
+    top: -45px;
+	left: 17px;
+	font-size: 16px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+	.LayoutUserSliderDiv {
+		position: relative;
+		width: 400px;
+		margin: 0 auto;
+		padding: 13px 5px;
+		top: -23px;
+		left: -50px;
+		height: 100px;
+	
+	
+	}
+	.SliderUserListItem {
+		position: relative;
+		display: inline-block;
+		margin-left: 40px;
+		user-select: none;
+		list-style: none;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+	
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 130px; 
+		
+	
+	}
+	.SliderUserListItem .LayoutUserListItemImg{
+		position:relative;
+		padding: 5px;
+		top: -30px;
+		background:linear-gradient(#e66465,#9198e5,red);
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		
+	}
+	.LayoutUserListItemName{
+		position: relative;
+		top: -55px;
+		font-size: 16px;
+		left: 12px;
+	}
+   
+	
+}

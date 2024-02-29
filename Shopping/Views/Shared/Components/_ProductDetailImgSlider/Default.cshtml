@@ -1,0 +1,91 @@
+﻿@model Product
+
+	<div class="ImgDiv">
+					<div class="containerSlider">
+						<div class="ProductDetailslider">
+							<div class="slider__wrapper">
+								
+								<div class="slider__items">
+									<div class="slider__item slider__item_active" data-index="1" data-order="1" data-translate="100">
+										<!--1 -->
+                                    <img src="~/Shopping/ProductImg/@Model.Image1" class="slider_Img" alt="">
+									</div>
+									@if  (@Model.Image2  ==  null){
+                                      <div class="slider__item">
+										<!--1 -->
+                                    <img src="~/Shopping/ProductImg/@Model.Image1" class="slider_Img" alt="">
+									</div>
+									}
+									
+									@if  (@Model.Image2  !=  null)
+									{
+										<div class="slider__item">
+											<!-- 2-->
+                                    <img src="~/Shopping/ProductImg2/@Model.Image2" class="slider_Img" alt="">
+										</div>
+									}
+									@if (@Model.Image3 != null)
+									{
+										<div class="slider__item">
+
+											<!-- 3 -->
+                                    <img src="~/Shopping/ProductImg2/@Model.Image3" class="slider_Img" alt="">
+										</div>
+									}
+									@if (@Model.Image4 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image4" class="slider_Img" alt="">
+											<!-- 4 -->
+                                </div>
+									}
+									@if (@Model.Image5 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image5" class="slider_Img" alt="">
+											<!-- 5 -->
+                                </div>
+									}
+									@if (@Model.Image6 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image6" class="slider_Img" alt="">
+											<!-- 6 -->
+                                </div>
+									}
+									@if (@Model.Image7 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image7" class="slider_Img" alt="">
+											<!-- 7 -->
+                                </div>
+									}
+									@if (@Model.Image8 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image8" class="slider_Img" alt="">
+											<!-- 8 -->
+                                </div>
+									}
+								@if (@Model.Image9 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image9" class="slider_Img" alt="">
+											<!-- 9 -->
+                                </div>
+									}
+									@if (@Model.Image10 != null)
+									{
+										<div class="slider__item">
+											<img src="~/Shopping/ProductImg2/@Model.Image10" class="slider_Img" alt="">
+											<!-- 10 -->
+                                </div>
+									}
+								</div>
+
+								<button href="#" class="slider__control" data-slide="prev"></button>
+								<button href="#" class="slider__control" data-slide="next"></button>
+							</div>
+						</div>
+					</div> 
+					</div> 

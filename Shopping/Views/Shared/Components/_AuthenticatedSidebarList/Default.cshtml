@@ -1,0 +1,10 @@
+﻿
+<li class="SidebarListLi"><a href="/User/Profile/@ViewBag.UserName"><i class="fa-sharp fa-solid fa-house-user SidebarIcons"></i> Hesabınız</a></li>
+<li class="SidebarListLi"><a href="/Member/Product/MyProducts/"><i class="fa-solid fa-layer-group SidebarIcons"></i>Sizin Elanlarınız</a></li>
+@if(ViewBag.ShopStatus == "Təsdiqləndi")
+{
+	<li class="SidebarListLi"><a href="/Shop/InShop/@ViewBag.ShopName"><i class="fa-solid fa-store SidebarIcons"></i>Mağazanız</a></li>
+}
+            <li class="SidebarListLi"><a href="/Member/Message/Operator/"><i class="fa-solid fa-envelope SidebarIcons"></i>Mesajlar</a></li>
+            <li class="SidebarListLi"><a href="/Member/Notification/Content/"><i class="fa-regular fa-bell SidebarIcons"></i>Bildirimler</a></li>
+<li class="SidebarListLi"><a href="/Member/Profile/Settings/"><i class="fa-solid fa-gear SidebarIcons"></i>Hesab Ayarlar</a></li>

@@ -1,0 +1,161 @@
+﻿@model Product
+
+
+					<div class="ProductDescription">
+								 <div class="ListDiv"><span class="ListSpan">Kategori:</span><b class="List">@Model.Catalog/@await Component.InvokeAsync("_ProductDetailCategory2Name",new{id=@Model.Category2Id})</b></div>
+							
+							<div class="ListDiv"><span class="ListSpan">Şəhər:</span><b class="List">@Model.City</b></div>
+
+						@if (Model.CarMake  !=  null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Marka:</span><b class="List">@Model.CarMake</b></div>
+
+						}
+						@if (Model.ProductModel != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Modeli:</span><b class="List">@Model.ProductModel</b></div>
+
+						}
+							@if (Model.TypeOfGoods != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Malın növü:</span><b class="List">@Model.TypeOfGoods</b></div>
+
+						}
+							@if (Model.WorkArea != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">İş Fəaliyyəti:</span><b class="List">@Model.WorkArea</b></div>
+
+						}
+						
+							@if (Model.WorkSchedule != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">İş Grafiki:</span><b class="List">@Model.WorkSchedule</b></div>
+
+						}
+							@if (Model.WorkPlace != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Çalışma yeri:</span><b class="List">@Model.WorkPlace</b></div>
+
+						}
+							@if (Model.Edaction != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Təhsil:</span><b class="List">@Model.Edaction</b></div>
+
+						}
+							@if (Model.AnimalSpecies != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Cinsi:</span><b class="List">@Model.AnimalSpecies</b></div>
+
+						}
+							@if (Model.FeedsforAnimals != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Yem adı:</span><b class="List">@Model.FeedsforAnimals</b></div>
+
+						}
+							@if (Model.Gender != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Cinsiyyət:</span><b class="List">@Model.Gender</b></div>
+
+						}
+							@if (Model.ClothingType != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Geyim növü:</span><b class="List">@Model.ClothingType</b></div>
+
+						}
+							@if (Model.Size != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Ölçü:</span><b class="List">@Model.Size</b></div>
+
+						}
+							@if (Model.BusinessArea != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Biznes sahəsi:</span><b class="List">@Model.BusinessArea</b></div>
+
+						}
+
+						@if (Model.Color != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Rengi:</span><b class="List">@Model.Color</b></div>
+
+						}
+						@if (Model.CarEngineBox  !=  null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Mühərriklər sm3:</span><b class="List">@Model.CarEngineBox</b></div>
+
+						}
+						@if (Model.VehicleFuelType != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Yanacaq Növü:</span><b class="List">@Model.VehicleFuelType</b></div>
+
+						}
+
+						@if (Model.CarBody != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Kuzov:</span><b class="List">@Model.CarBody</b></div>
+						}
+						@if (Model.Year != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Ili:</span><b class="List">@Model.Year</b></div>
+
+						}
+						@if (Model.CarMileagekm != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Yürüş km:</span><b class="List">@Model.CarMileagekm</b></div>
+
+						}
+						@if (Model.BuildingType != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Bina:</span><b class="List">@Model.BuildingType</b></div>
+
+						}
+						@if (Model.RentForSale != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Elan Novu:</span><b class="List">@Model.RentForSale</b></div>
+						}
+						@if (Model.LandForSale != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Sahe Sot:</span><b class="List">@Model.LandForSale</b></div>
+
+						}
+						@if (Model.BuildingFloor != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Mərtəbə:</span><b class="List">@Model.BuildingFloor</b></div>
+
+						}
+						@if (Model.Fieldm2 != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">m2:</span><b class="List">@Model.Fieldm2</b></div>
+
+						}
+						@if (Model.NumberOfRooms != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Otaq Sayısı:</span><b class="List">@Model.NumberOfRooms</b></div>
+
+						}
+						@if (Model.ProductNew != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Yeni <i class="fa fa-question"></i> :</span><b class="List">@Model.ProductNew</b></div>
+
+						}
+						@if (Model.Delivery != null)
+						{
+								<div class="ListDiv"><span class="ListSpan">Çatdırılma:</span><b class="List">@Model.Delivery</b></div>
+
+						}
+						@if (Model.PlaceOfResidence != null)
+						{
+		   		<div class="ListDiv"><span class="ListSpan">Ərazi:</span><b class="List">@Model.PlaceOfResidence</b></div>
+
+						}
+
+							<div class="ListDiv">
+								<p class="Description">
+								@Model.Description
+								</p>
+							</div>
+							<div class="ProductDescriptionFooterDiv">
+								<b class="ProductDescriptionFooterHelp"><i class="fa fa-exclamation"></i>Elan Sahibi ilə əlaqə saxlayıb məsulu Görmədən beh verməyiniz...</b>
+							</div>
+
+						</div>
+

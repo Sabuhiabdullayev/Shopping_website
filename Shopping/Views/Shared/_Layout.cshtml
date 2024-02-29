@@ -1,0 +1,113 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<AppUser> SignInManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="~/Shopping/WebSiteIcon/Siav.png" type="image/x-icon">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Siav.az-Pulsuz ElanLar Saytı</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="~/css/WebSiteLayout/Layout.css">
+	<link rel="stylesheet" href="~/css/WebSiteLayout/LayoutCatalog.css">
+	    	<link rel="stylesheet" href="~/css/WebSiteLayout/LayoutUserSlider.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+	<div class="LayoutDiv">
+		<!-- Start Topbar -->
+		<div class="TopbarDiv">
+			@await Component.InvokeAsync("_Topbar")
+
+			<!-- Start Namvbar -->
+			<div class="NavbarDiv">
+				@await Component.InvokeAsync("_Navbar")
+			</div>
+		
+			<!-- End Navbar -->
+
+		</div>
+
+		<!-- End Topbar -->
+
+		<!-- Start Notification -->
+
+		@if(User.Identity.IsAuthenticated){
+			@await Component.InvokeAsync("_MemberNotificationGetList")
+		}
+	
+		<!-- End Notification -->
+
+		<!-- Start Sidebar -->
+
+		<div class="LayoutSidebar">
+
+			<ul class="SidebarListUl">
+				<li class="SidebarListLi"><a href="/Home/AllProductPage/"><i class="fa-solid fa-house SidebarIcons"></i> Baş Səyifə</a></li>
+
+				@if (User.Identity.IsAuthenticated)
+						{
+					@await Component.InvokeAsync("_AuthenticatedSidebarList")
+						}
+				<li class="SidebarListLi"><a href="/User/Members/"><i class="fa-solid fa-users-viewfinder SidebarIcons"></i>Bütün İstifadəçilər</a></li>
+				<li class="SidebarListLi"><a href="/Shop/Shops/"><i class="fa-solid fa-shop SidebarIcons"></i>Bütün Mağazalar</a></li>
+				<li class="SidebarListLi"><a href="/Product/Vip/"><i class="fa-brands fa-vuejs SidebarIcons"></i>Vip Elanlar</a></li>
+				<li class="SidebarListLi"><a href="/Product/ApprovedProducts/"><i class="fa fa-check-circle  SidebarIcons"></i>Təsdiqləndi Hesab</a></li>
+			    <li class="SidebarListLi"><a href="#"><i class="fa-sharp fa-solid fa-circle-question SidebarIcons"></i> Yardim</a></li>
+
+				@if  (User.IsInRole("Admin")||User.IsInRole("Moderator")||User.IsInRole("Writer"))
+				{
+					<li class="SidebarListLi"><a href="/Admin/Product/AllProducts"><i class="fa-solid fa-desktop SidebarIcons"></i>Admin Paneli</a></li>
+				}
+				<li class="SidebarListLi"><a href="/Login/SignUp/"><i class="fa-solid fa-id-card SidebarIcons"></i> Yeni Hesab Açın</a></li>
+				@if  (SignInManager.IsSignedIn(User))
+				{
+					<form method="post" asp-action="Logout" asp-controller="Login" asp-area=null>
+
+					<li class="SidebarListLiExit"><button class="SidebarListLiExitBtn"><i class="fa-solid fa-user-minus SidebarIconExit"></i>Çıxış </button></li>
+					</form>
+				}
+			</ul>
+		</div>
+
+		<!-- End Sidebar -->
+				@await Component.InvokeAsync("_LayoutFilters")
+
+		<!-- Start RenderBody -->
+
+		<div class="RenderBody" style="padding-top:50px">
+			
+		
+			@RenderBody()
+		</div>
+
+		<!-- End RenderBody -->
+		<!-- Start Footer -->
+		@await Component.InvokeAsync("_Footer")
+
+		<!-- End Footer -->
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+	<script src="~/js/Layout/Layout.js"></script>
+	<script src="~/js/Layout/select.js"></script>
+	<script src="~/js/Layout/LayoutCatalog.js"></script>
+    <script src="~/js/Layout/LayoutUserSlider.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

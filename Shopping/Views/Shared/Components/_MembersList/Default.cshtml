@@ -1,0 +1,22 @@
+﻿@model List<AppUser>
+
+	  @foreach (var item in Model)
+         {
+
+<div class="card">
+    <a href="/User/Profile/@item.UserName" class="MemberListA">
+        <img src="~/Shopping/MemberBigImg/@item.BigImageUrl" alt="" class="BigImg">
+        <img class="MemberListImg" src="~/Shopping/MemberImg/@item.ImageUrl" alt="">
+        <b class="MemberListName">@item.Name @item.SurName
+           @if (item.confirmed == "Təsdiqləndi")
+                {
+                    <i class="fa-solid fa-circle-check MemberListConfim" style="color: #174aff;"></i> <span class="Toolktip">Təsdiqləndi</span>  
+                }  
+</b>
+        <b class="MemberListPhone">@item.PhoneNumber</b>
+        <b class="MemberListProductNumber">Hesabda: @await Component.InvokeAsync("_MemberListProductCount",new{id=@item.Id}) Elan var</b>
+        
+        <b class="MemberListDate">@(((DateTime)item.AppUserDate).ToString("dd-MMM-yyyy"))</b>
+    </a>
+</div>
+}

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "AdsList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 style="text-align:center">Reklam List</h3>
+<br />
+
+<div class="ml-3 mr-3">
+    @await Component.InvokeAsync("_AdsGetList")
+</div>

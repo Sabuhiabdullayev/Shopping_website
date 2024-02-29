@@ -1,0 +1,32 @@
+﻿@model List<AppRole>
+@{
+  
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>RoleList</h1>
+<br />
+<table class="table table-bordered">
+
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>NormalizedName</th>
+		<th>Rol Update</th>
+		<th>Rol Remove</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+   	<tr>
+		<th>@item.Id</th>
+		<th>@item.Name</th>
+		<th>@item.NormalizedName</th>
+		<th><a href="#" class="btn btn-outline-info">Yenile</a></th>
+		<th><a href="#" class="btn btn-outline-danger">Sil</a></th>
+    </tr> 
+}
+
+</table>
+<br />
+<a href="/Admin/AdminRoles/AddRole" class="btn btn-outline-primary">Role Elave Etme</a>

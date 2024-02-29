@@ -1,0 +1,87 @@
+ .ContanierProductList{
+    position: relative;
+    left: 60px;
+ }
+ .MyProductListMenuBtn{
+    position: absolute;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    justify-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    color: black;
+    border: none;
+    top: 3px;
+    left: 85%;
+    z-index: 10;
+}
+.MyProductListMenuBtn:hover{
+    transition: 0.3s;
+    color: white;
+    background-color: rgb(137, 137, 137);
+
+}
+.MyProductListMenuBtn .MyProductListMenuIcon{
+    position: relative;
+    top: -3px;
+}
+.MyProductListMenuBtn:focus ~.MyproductListSettingDiv{
+   display: block;
+}
+.MyproductListSettingDiv{
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 242px;
+    height: 345px;
+    z-index: 100;
+    background-color: rgb(230, 218, 218);
+    border-radius: 8px 8px 8px 8px;
+    display: none;
+}
+.MyproductListSettingDiv .MyProductListA{
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 10px;
+    top: 20px;
+    left: 10px;
+    z-index: 10;
+    text-decoration: none; 
+}
+.MyproductListSettingDiv:hover{
+    display: block;
+}
+.MyProductListIcon{
+    margin-right: 10px;
+}
+
+
+@media only screen and (max-width:658px) {
+    .MyProductListMenuBtn{
+        position: absolute;
+        padding: 3px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        justify-items: center;
+        border-radius: 50%;
+        font-size: 20px;
+        color: black;
+        border: none;
+        top: 3px;
+        left: 80%;
+        z-index: 10;
+    }
+    .MyproductListSettingDiv{
+        position: absolute;
+      
+        width: 171px;
+        height: 235px;
+        z-index: 100;
+        background-color: rgb(193, 193, 193);
+        border-radius: 8px 8px 8px 8px;
+        display: none;
+    }
+}

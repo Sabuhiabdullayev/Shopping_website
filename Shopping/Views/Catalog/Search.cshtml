@@ -1,0 +1,81 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Product>
+
+
+
+@{
+    ViewData["Title"] = "SearchFilter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/CatalogSearch/CatalogSearch.css">
+</head>
+<body>
+    <div class="CatalogSearchDiv">
+      @await Component.InvokeAsync("_CatalogSearchCategoryList")
+            <h4>Axtarilan Elanlar(@Model.Count())</h4>
+<div class="row">
+
+	@foreach (var x in Model)
+	{
+		
+			
+
+			<div class="card" id="ProductListCard">
+			 <a href="#"><i class="fa fa-heart ProductListSelectIcon"></i></a>
+			<a href="/Product/Detail/@x.ProductId" class="DefaultProductList">
+				<img class="Img" src="~/Shopping/ProductImg/@x.Image1" alt="">
+				@if (x.ShopProductStatus == "Təsdiqləndi")
+				{
+					<b class="ProductListShop">Mağaza</b>
+				}
+				@if (@x.Vip == "Təsdiqləndi")
+				{
+					<img class="ProductListVip" src="~/Shopping/VipPremium/Vip.png" alt="">
+				}
+				@if (@x.Premium == "Təsdiqləndi")
+				{
+					<img class="ProductListPremium" src="~/Shopping/VipPremium/Premium.png" alt="">
+
+				}
+				<ul class="ProductListFooterDiv">
+					<li class="Price"><b><b>@x.Price @x.PriceCurrency</b></b><span></span></li>
+					@if (x.ProductName != null)
+					{
+						<li><b>@x.ProductName</b></li>
+					}
+					<li>
+						Sahibi:<b class="ProductListName">@x.ProductOwnerName <span class="ProductListNameTooltip">@x.ProductOwnerName</span></b>
+                     
+						@*@if (@x.AppUser.confirmed == "Təsdiqləndi")
+						{
+							<i class="fa fa-check-circle Confirmed"></i>
+
+							<span class="ProductListTooltip">Təsdiqləndi</span>
+						}*@
+					</li>
+					<li class="CityDate"><b>@x.City</b>               @(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</li>
+				</ul>
+			</a>
+		</div>
+		
+	}
+</div>
+
+       
+    </div>
+   
+</body>
+</html>
+
+
+
+
+

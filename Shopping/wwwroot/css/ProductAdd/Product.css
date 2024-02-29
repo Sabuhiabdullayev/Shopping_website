@@ -1,0 +1,364 @@
+
+
+.ContanierProductAdd{
+    position: relative;
+    width: 100%;
+   height: 100%;
+   background: 100%;
+   left: 50%;
+   transform: translate(-50%);
+   background:transparent;
+   overflow: hidden;
+   
+
+}
+.DefaultProductAddAllDiv::-webkit-scrollbar{
+  display: none;
+}
+.DefaultProductAddAllDiv{
+    position: relative;
+    width: 1000px;
+    height: 690px;
+    padding: 40px 0 30px 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 50%;
+    transform: translate(-50%);
+    background: #f0f0f0; 
+}
+.ContanierProductAdd .DefaultProductAdd{
+    position: relative;
+    width: 1000px;
+    height: 690px;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: transparent;
+
+}
+
+.DefaultProductAdd .InputDiv{
+    position: relative;
+    margin-bottom:1rem;
+    margin-left: 30%;
+   
+}
+.ImgDiv{
+    width: 330px;
+    height: 100%;
+}
+.row{
+  position: relative;
+  width: 400px;
+  left: -20px;
+
+}
+.row .card{
+  position: relative;
+   width: 100px;
+   margin-bottom: 7px;
+border: none;
+background-color: transparent;
+
+}
+.card-img-top{
+    margin-left: -12px;
+   font-size: 90px;
+    margin-right: 20px;
+    margin-top: 0 !important;
+}
+.InputDiv .InputName{
+    position: relative;
+    font-size: 15px;
+    left: -200px;
+    top: 0.5rem;
+    color: rgb(24, 23, 23);
+}
+
+
+
+.InputDiv .Input{
+    position: absolute;
+    left: 20px;
+    padding: 5px;
+    width: 300px;
+    font-size: 15px;
+    border-radius: 4px;
+    background-color:white;
+    left: 20px;
+   border: 0.5px solid black;
+
+    
+    }
+    .Inputcheckbox{
+      position: relative;
+      top: 5px;
+      padding: 5px;
+      font-size: 17px;
+      left: 20px;
+  
+    }
+    .ProductAddIcon{
+      position: relative;
+      margin-right: 10px;
+    }
+    .PriceInput{
+        position: absolute;
+        left: 20px;
+        padding:5px 60px 5px 5px;
+        width: 250px;
+        font-size: 15px;
+        border-radius: 4px;
+       background: white;
+       left: 20px;
+       border: 0.5px solid black;
+    }
+    
+    .DescriptionTextArea{
+        position: relative;
+        width: 300px;
+        padding: 8px;
+        font-size: 15px;
+        left: -80px;
+        min-height: 200px;
+        max-height: 300px;
+        background-color: white;
+
+    }
+    #DescriptionName{
+      position: relative;
+      top: -10px;
+     
+    }
+.PriceSelect{
+    position: relative;
+    margin-left: 140px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+.InputDiv .UploadImg{
+    position: relative;
+    left:250px;
+    top: -30px;
+    background: blue;
+   
+}
+
+
+
+
+.InputBtn{
+    position: relative;
+    left: 360px;
+    top: 10px;
+    
+}
+
+.Plus{
+  color: #f0f0f0;
+}
+
+   
+    .DefaultProductAddAllDiv .ProductAddDescriptionHelp
+    {
+        position: absolute;
+        padding: 5px;
+        top: 50px;
+          right: 15px;
+        width: 300px;
+        font-size: 17px;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      
+      }
+      .DefaultProductAddAllDiv .ProductAddDescriptionHelp ul li{
+        margin-bottom: 10px;
+      }
+      .ProductAddDescriptionHelpWebSiteName{
+        position: relative;
+        font-size: 25px;
+        font-weight: bold;
+        top: -20px;
+        color: rgba(20, 6, 217, 0.84);
+      
+    }
+
+      .QrCodeDiv{
+        position: absolute;
+        padding: 5px;
+        top: 400px;
+          right: 15px;
+        width: 300px;
+        height: 240px;
+        font-size: 17px;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+      }
+      .QrCodeDiv .WebSiteQrCode{
+        position: relative;
+        padding: 10px;
+        width: 140px;
+        height: 140px;
+        margin-left: 80px;
+        top: 10px;
+        background-color: white;
+      }
+      .QrCodeDiv .QrCodeHelp{
+position: relative;
+font-size: 20px;
+font-family: sans-serif;
+margin-top: 25px;
+left: 15px;
+      }
+
+#Img2,#Img3,#Img4,#Img5,#Img6,#Img7,#Img8,#Img9,#Img10{
+    display: none;
+}
+
+.UploadImage{
+position: relative;
+margin-left:290px;
+margin-top: -28px;
+width: 100px;
+height: 95px;
+border: transparent;
+border-radius: 5px;
+}
+.fa-star-of-life{
+    position: relative;
+    font-size: 7px;
+    top: -10px;
+    margin-left: 8px;
+    color: rgb(255, 0, 0);
+}
+.LabelImg1,.LabelImg2,.LabelImg3,.LabelImg4,.LabelImg5,.LabelImg6,.LabelImg6,.LabelImg7,
+.LabelImg8,.LabelImg9,.LabelImg10{
+  position: relative;
+  width: 120px;
+  height: 27px;
+  left: 330px;
+  top: 20px;
+  text-align: center;
+  background-color: rgb(210, 210, 199);
+  border-radius: 2px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.LabelImg2,.LabelImg3,.LabelImg4,.LabelImg5,.LabelImg6,.LabelImg6,.LabelImg7,
+.LabelImg8,.LabelImg9,.LabelImg10{
+  display: none;
+}
+.ImgInput{
+  opacity: 0;
+}
+
+@media screen and (max-width: 658px) {
+
+  .ProductAddDescriptionHelp{
+    display: none;
+  }
+  .QrCodeDiv{
+    display: none;
+  }
+  .DefaultProductAddAllDiv{
+    position: relative;
+    width: 400px;
+    height: 690px;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #f0f0f0; 
+}
+.DefaultProductAddAllDiv::-webkit-scrollbar {
+  display: none;
+}
+.ContanierProductAdd .DefaultProductAdd{
+    position: relative;
+    width: 400px;
+    height: 690px;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #f0f0f0;
+
+}
+.InputDiv .Input{
+  position: absolute;
+  margin-left: 30px;
+  padding: 5px;
+  width: 200px;
+  font-size: 15px;
+  border-radius: 4px;
+  background-color:transparent;
+  left: 20px;
+ border: 0.5px solid black;
+
+  }
+  .PriceInput{
+    position: absolute;
+    left: 20px;
+    padding:5px 60px 5px 5px;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 4px;
+   background: transparent;
+   margin-left: 28px;
+   border: 0.5px solid black;
+}
+.PriceSelect{
+  left: 0px;
+  top: 2px;
+}
+.DescriptionTextArea{
+  position: relative;
+  padding: 8px;
+  width: 210px;
+  top: -20px;
+  font-size: 15px;
+  margin-left: 110px;
+  background-color: transparent;
+
+}
+    .InputDiv .InputName {
+      left: -35%;
+      font-size: 14px;
+      color: rgb(0, 0, 0);
+    
+    }
+    .InputBtn{
+      position: relative;
+      left: 150px;
+  }
+  
+  .Default .DescriptionHelp{
+        position: relative;
+        padding: 5px;
+          top: 13%;
+          left: 10%;
+        width: 80%;
+       
+      }
+      .LabelImg1,.LabelImg2,.LabelImg3,.LabelImg4,.LabelImg5,.LabelImg6,.LabelImg6,.LabelImg7,
+.LabelImg8,.LabelImg9,.LabelImg10{
+position: relative;
+width: 120px;
+height: 27px;
+margin-left: -150px;
+top: 25px;
+text-align: center;
+background-color: rgb(210, 210, 199);
+border-radius: 2px;
+border: 1px solid black;
+cursor: pointer;
+}
+.ImgDiv{
+  position: relative;
+  left: -80px;
+}
+  }

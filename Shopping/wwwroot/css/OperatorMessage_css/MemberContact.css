@@ -1,0 +1,323 @@
+
+*:focus {
+    outline: none;
+}
+
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(37, 35, 35);
+
+}
+.OperatorContactContanier{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 35, 35);
+}
+.OperatorContactViewDefault{
+    position: relative;
+    width: 800px;
+    height: 97vh;
+    background-color: rgb(81, 81, 81);
+    left: 50%;
+   padding-bottom: 10px;
+    transform: translate(-50%);
+    list-style: none;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.OperatorContactViewDefault .MessageTopNameDiv{
+    position: relative;
+    width: 800px;
+    height: 42px;
+    background-color: rgb(14, 14, 14);
+}
+.MessageTopNameDiv .MessageTopMenuIcon{
+    position: relative;
+    color: white;
+    float: right;
+    font-size: 20px;
+    right: 20px;
+    top: 6px;
+    padding: 5px 7px;
+    border-radius: 50%;
+    display: none;
+}
+.MessageTopMenuIcon:hover{
+    background-color: grey;
+}
+.MessageTopNameDiv .MessageTopImg{
+position: relative;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+padding: 2px;
+left: 20px;
+top: -3px;
+background-color: white;
+} 
+.MessageTopNameDiv .MessageTopName{
+    position: relative;
+    margin-left: 25px;
+    color: white;
+}
+.MessageTopNameDiv .MessageTopLeftExitBtn{
+    position: relative;
+left: 10px;
+    color: rgb(0, 124, 233);
+    font-size: 25px;
+}
+.MessageMenuDiv{
+    position: absolute;
+    width: 280px;
+    height: 300px;
+    background-color: rgb(58, 58, 58);
+    z-index: 10;
+   left: 1010px;
+   border-radius: 10px 0 10px 10px;
+}
+.MessageMenuDiv .MessageMenuIcon{
+    position: absolute;
+    font-size: 20px;
+    color: white;
+  margin-right: 28px;
+  left: 80px;
+  top: 160px;
+
+}
+.MessageMenuIcon i{
+    position: relative;
+    margin-right: 25px;
+}
+.MessageMenuDiv .MessageMenuImg{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+.MessageMenuDiv .MessageMenuName{
+    position: relative;
+    top: 130px;
+    left: 50%;
+    left: 90px;
+    transform: translate(-50%);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.OperatorContactView{
+    position: relative;
+    width:800px;
+    height: 580px;
+    background-color: rgb(81, 81, 81);
+  overflow: auto;
+  /* overflow-y: scroll; */
+  scrollbar-gutter: revert-layer;
+    list-style: none;
+    border-radius: 10px;
+}
+.OperatorContactView::-webkit-scrollbar{
+    display: none;
+}
+.OperatorContactView li{
+position: relative;
+width: 100%;
+margin-top: 50px;
+}
+ .MemberSendMessage{
+    position: relative;
+
+   margin-left:340px ;
+   margin-bottom: 30px;
+    padding: 10px;
+    width: 400px;
+    font-family:sans-serif;
+    background-color: rgb(23, 94, 218);
+    border-radius: 30px 0px 30px 30px;
+}
+
+
+.MemberSendContent{
+    position: relative;
+    margin-top:5px;
+    color: white;
+    
+}
+.MemberSendMessage .MemberSendDate{
+    position: relative;
+   float: right;
+   top: -17px;    
+}
+
+
+
+
+
+.OperatorSendMessage{
+    position: relative;
+
+   margin-left: -15px;
+   margin-bottom: 30px;
+    padding: 10px;
+    width: 400px;
+font-family:sans-serif;
+    background-color: rgb(128, 123, 123);
+    border-radius: 0px 30px 30px 30px;
+}
+
+
+.OperatorSendContent{
+    position: relative;
+    margin-top:5px;
+    color: white;
+    
+}
+.OperatorSendMessage .OperatorSendDate{
+    position: relative;
+   float: right;
+   top: -17px;    
+}
+.OperatorSendMessage .OperatorOwnerImg{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 85px;
+    left: -10px;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: white;
+
+}
+.SendInputDiv{
+    position: relative;
+top: -30px;
+ width: 700px;
+ left: 40px;
+ height: 50px;
+ background-color: rgb(161, 161, 161);
+ border-radius: 40px;
+ border: 1px solid rgb(112, 112, 112);
+
+}
+.SendInput{
+    width: 630px;
+    padding: 9px;
+    padding-left: 27px;
+    font-size: 17px;
+    margin-top: 1px;
+    margin-left: 10px;
+    border-radius: 40px 10px 10px 40px;
+    background-color: transparent;
+    border: none;
+}
+.SendButton{
+    position: relative;
+    background-color: aliceblue;
+    padding: 10px;
+ width: 40px;
+ height: 40px;
+    border-radius: 50%;
+    margin-left: 9px;
+    top: 3px;
+    border: none;
+    left: -2px;
+ 
+}
+
+.SendButton .SendButtonIcon{
+    position: relative;
+    top: -2px;
+  color: blue;
+}
+.SendButton:hover .SendButtonIcon{
+    color: rgb(58, 198, 11);
+}
+
+.MessageUsers{
+    display: none;
+}
+
+@media only screen and (max-width:678px){
+    .OperatorContactViewDefault{
+        position: relative;
+        width: 400px;
+        height: 97vh;
+    } 
+    .SendInputDiv{
+    position: relative;
+    
+     width: 330px;
+     left: 40px;
+     height: 50px;
+     background-color: rgb(161, 161, 161);
+     border-radius: 40px;
+    
+    }
+    .SendInput{
+        width: 270px;
+    }
+    .SendButton{
+        position: relative;
+        background-color: aliceblue;
+        padding: 10px;
+     width: 40px;
+     height: 40px;
+        border-radius: 50%;
+        margin-left: 9px;
+        top: -41px;
+        border: none;
+        left: 275px;
+     
+    }
+    .OperatorContactView{
+        width: 500px;
+       height: 560px;
+    }
+    .MemberSendMessage{
+        width: 260px;
+        right: 250px;
+    }
+    .OperatorSendMessage{
+        width: 260px;
+        left: -10px;
+      
+    }
+    .OperatorSendMessage .OperatorOwnerImg{
+        top: 110px;
+        width: 30px;
+        height: 30px;
+    }
+    .OperatorContactViewDefault .MessageTopNameDiv{
+        position: relative;
+        width: 500px;
+        height: 42px;
+        background-color: rgb(14, 14, 14);
+    }
+    .MessageTopNameDiv .MessageTopMenuIcon{
+        position: relative;
+        color: white;
+        float: right;
+        font-size: 20px;
+        right: 20px;
+        top: 6px;
+        padding: 5px 7px;
+        border-radius: 50%;
+        display: none;
+    }
+    .MessageMenuDiv{
+        position: absolute;
+        width: 280px;
+        height: 300px;
+        background-color: rgb(58, 58, 58);
+        z-index: 10;
+       left: 520px;
+       border-radius: 10px 0 10px 10px;
+       display: none;
+    }
+   
+}

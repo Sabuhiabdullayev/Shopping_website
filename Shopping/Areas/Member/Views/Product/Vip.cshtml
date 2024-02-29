@@ -1,0 +1,26 @@
+﻿@model Product
+@{
+	ViewData["Title"] = "Vip";
+	 Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Elanı Vip Səviyyəsinə Qaldırma</h1>
+<br />
+<br />
+<br />
+@switch (@Model.Vip)
+{
+	case "Təstiqləndi":
+		<h3>Elanınız Vip Elandır...</h3>
+		break;
+	case "Gözlənilir":
+			<h3>Elanınız Vip Gözlənilir...</h3>
+		break;
+	case "Təstiqlənməyib":
+		<form asp-action="VipVerified" asp-controller="Product" asp-area="Member" method="post">
+			<input type="hidden" asp-for="ProductId" />
+			<button type="submit" class="btn btn-outline-success form-control"><b>Təsdiqləyin</b></button>
+		</form>
+		break;
+}
+

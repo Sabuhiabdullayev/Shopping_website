@@ -1,0 +1,59 @@
+﻿
+@model AppUser
+@{
+    
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<h4>İstifadəçi Status Verme</h4>
+<br />
+<table class="table table-bordered">
+	<tr>
+		<th>İstifadəçi Nömrəsi</th>
+		<th>Şəkil</th>
+		<th>Adı Soyad</th>
+		<th>İstifadəçi Adı</th>
+		<th>Status</th>
+		<th>Telefon</th>
+		<th>Hesab Açma Tarixi</th>
+		<th>Hesabdakı Elan Sayısı</th>
+		<th> Hesaba Göz At</th>
+	</tr>
+	<tr>
+		<th>@Model.Id</th>
+		<th><img src="~/Shopping/MemberImg/@Model.ImageUrl" style="width:100px"/></th>
+		<th>@Model.Name @Model.SurName</th>
+		<th>@Model.UserName</th>
+		<th>@Model.confirmed</th>
+		<th>@Model.PhoneNumber</th>
+		<th>@(((DateTime)Model.AppUserDate).ToString("dd-MMM-yyyy"))</th>
+		<th> @await Component.InvokeAsync("_MemberListProductCount",new{id=@Model.Id}) </th>
+		<th><a href="/User/Profile/@Model.Id/" class="btn btn-outline-info">Göz At</a> </th>
+	</tr>
+</table>
+<br />
+<form asp-action="UserStatusGiveUpdate" asp-controller="User" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="UserId" value="@Model.Id" />
+	<input type="hidden" name="UserConfirmedStatus" value="Yoxlanılır" />
+	<button class="btn btn-outline-info form-control">Yoxlanılır</button>
+</div>
+</form>
+<form asp-action="UserStatusGiveUpdate" asp-controller="User" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="UserId" value="@Model.Id" />
+	<input type="hidden" name="UserConfirmedStatus" value="Təsdiqləndi" />
+	<button class="btn btn-outline-success form-control">Təsdiqlə</button>
+</div>
+</form>
+<form asp-action="UserStatusGiveUpdate" asp-controller="User" asp-area="Admin" method="post">
+<div class="form-group">
+    <input type="hidden" name="UserId" value="@Model.Id" />
+	<input type="hidden"  name="UserConfirmedStatus" value="Təsdiqlənmədi" />
+	<button class="btn btn-outline-danger form-control">Təsdiqlənmədi</button>
+</div>
+</form>
+
+
+
+

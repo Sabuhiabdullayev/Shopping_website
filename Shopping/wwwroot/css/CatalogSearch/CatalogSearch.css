@@ -1,0 +1,62 @@
+.CatalogSearchDiv{
+    position: relative;
+    width: 1200px;
+    left: 50%;
+    transform: translate(-50%);
+    overflow: hidden;
+
+}
+.List{
+    width: 900px;
+    list-style: none;
+    cursor: pointer;
+}
+.List li{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    margin: 2px;
+   
+ 
+} 
+.CategoryBtn{
+    position: relative;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+.CatalogSearchRenderBody{
+    position: relative;
+    width: 1200px;
+    height: 100%;
+
+
+}
+@media screen and (max-width:500px){
+   .CatalogSearchDiv{
+    position: relative;
+    width: 440px;
+   }
+    .List{
+        position: relative;
+        width: 390px;
+        overflow: hidden;
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        overflow: auto;
+    }
+    .List::-webkit-scrollbar{
+        display: none;
+    }
+    .List li{
+        position: relative;
+       ;
+        padding: 10px;
+        margin: 2px;
+        
+     
+    } 
+}

@@ -1,0 +1,70 @@
+﻿@model EntityLayer.Concrete.Product 
+
+<div class="ProductDetailComplaintWarning">
+                <nav class="ComplaintNav"><h4>Elan Şikayət Formu</h4></nav>
+                <hr>
+                <div class="ComplaintContent">
+                    Elanı Şikayət Edəcəkmisiniz...
+                </div>
+                <hr>
+                <footer class="ComplaintFooter">
+
+                    <button class="btn btn-primary ComplaintYes">Bəli</button>
+                    <button class="btn btn-danger ComplaintNo">Xeyir</button>
+                </footer>
+            </div>
+            <div class="ProductDetailComplaintForm">
+                <nav class="ComplaintNav"><h4>Elan Şikayət Formu</h4></nav>
+                <hr>
+                <form asp-action="ProductComplaintSend" asp-controller="ProductComplaint" enctype="multipart/form-data" method="post">
+                    <div class="ComplaintDiv">
+			<input type="hidden" name="ComplaintProductId" value="@Model.ProductId" />
+                        <div class="Complaint1Page">
+                            <label>Ad Soyad</label>
+                            <input type="text" name="NameSurname" class="ComplaintInput" placeholder="Adınız Soyadınız" required><br>
+                            <label>Email</label>
+                            <input type="email" name="Email" class="ComplaintInput" placeholder="Emailiniz" required><br>
+                            <label>Telefon N</label>
+
+                            <input class="ComplaintInput" id="phone"
+                                   type="tel"
+                                   name="Phone"
+                                   value="+994 (__) ___-__-__"
+                                   pattern="^\+994(\s+)?\(?(77|55|50|70|51|99)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+                                   required><br>
+                            <br>
+                            <label class="btn btn-primary ComplaintNext">Devam Et</label>
+                        </div>
+                        <div class="Complaint2Page">
+                            <label>Şikayət nə ilə bağlı olduğunu seçiniz...</label>
+                            <select name="Title" id="" class="ComplaintSelect">
+                                <option value="dasdsds">Şikayət Suallar.</option>
+                                <option value="Elanım Çalınıb">Elanım Çalınıb.</option>
+                                <option value="Elanda Məndən Söz Olunub">Elanda Məndən Söz Olunub.</option>
+                                <option value="Elan Şəkli Mənə Aid">Elan Şəkli Mənə Aid.</option>
+                                <option value="Elanda Təhlükəli Məhsul Var">Elanda Təhlükəli Məhsul Var.</option>
+                                <option value="Elanda Reklam Mövcutdur">Elanda Reklam Mövcutdur.</option>
+                            </select>
+                            <div class="ComplaintLink">
+                                <label>Sizə Ait Olan Elan Linki atın</label>
+                                <input type="text" class="ComplaintInput" name="CauseOfComplaint" placeholder="Elan Linki " ><br>
+                            </div>
+                            <div class="ComplaintPhoto">
+                                <label class="ComplaintPhotoLabel">Şəkil.</label>
+                                <input type="file" name="ComplaintPhoto" class="ComplaintInput" placeholder="" ><br>
+                            </div>
+
+
+                            <label>Məzmun</label>
+                            <textarea name="Content" id="" cols="62" class="ComplaintInputTextArea" placeholder="Mezmununuz"></textarea>
+                            <label class="btn btn-danger ComplaintPrevious">Geriye</label>
+                            <button type="submit" class="btn btn-primary ComplaintSendBtn">Gonder</button>
+                        </div>
+                    </div>
+                </form>
+                <footer class="ComplaintFooterForm">
+                    <hr>
+                    <button class="btn btn-primary ComplaintFormExit">Şikayəti Sonlandır</button>
+
+                </footer>
+            </div>

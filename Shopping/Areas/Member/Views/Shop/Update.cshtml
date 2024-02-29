@@ -1,0 +1,32 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "Mağazayı Düzənləmək";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Mağazayı Düzənləmək</h3>
+<br />
+<form asp-action="Update" asp-controller="Shop" asp-area="Member" enctype="multipart/form-data" method="post">
+    <label>Mağaza Adı</label>
+	<input type="text" name="ShopName" value="@Model.ShopName"  class="form-control" required/><br />
+     
+	<label>Əlaqə Nömrəniz</label>
+	 <input class="form-control Input"   id="phone" 
+                    type="tel" 
+                    name="ShopPhone" 
+                   
+                    value="@Model.ShopPhone"
+                    pattern="^\+994(\s+)?\(?(77|70|50|55|51)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+                    required>
+	<br />
+     <label>Mağöaza Haqqında</label>
+     <textarea  name="ShopDescription" class="form-control">@Model.ShopDescription</textarea>
+	@*<input type="text" asp-for="ShopDescription" class="form-control" required/><br />*@
+	<label>Mağaza Şəkili</label>
+	<input type="file"  name="ShopSmallImage" value="@Model.ShopSmallImage" class="form-control" /><br />
+     <label>Mağaza arxa plan Şəkili</label>
+	<input type="file" name="ShopBigImage" value="@Model.ShopBigImage" class="form-control" /><br />
+	<button type="submit"  class="btn btn-primary form-control">Düzənlə</button>
+</form>
+
+ <script src="~/js/ProductAdd/ProductAdd.js"></script>

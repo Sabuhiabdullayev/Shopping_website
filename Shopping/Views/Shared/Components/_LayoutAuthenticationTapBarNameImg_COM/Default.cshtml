@@ -1,0 +1,15 @@
+﻿@model AppUser
+
+  <div class="MemberSignInImg">
+
+                        <img class="MemberImg" src="~/Shopping/MemberImg/@Model.ImageUrl" alt="">
+                        <span class="MemberName">@Model.Name</span>
+                                               
+@if(@Model.confirmed =="Təsdiqləndi")
+{
+                        <i class="fa fa-check-circle LayoutConfirmedTopbar"></i>
+                        <span class="LayoutTooltipTopbar">Təsdiqləndi</span>
+}
+ </div>
+
+ <script src="~/js/SignIn.js"></script>

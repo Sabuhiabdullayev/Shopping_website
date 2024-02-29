@@ -1,0 +1,15 @@
+﻿@model List<AppUser>  
+<br />
+  
+
+        <div class="LayoutUserSlider">
+        <ul class="LayoutUserSliderList">
+            @foreach(var x in Model){
+          <li class="SliderUserListItem"><img src="~/Shopping/MemberImg/@x.ImageUrl" class="LayoutUserListItemImg" alt=""><h4 class="LayoutUserListItemName"><a href="/User/Profile/@x.UserName">@x.Name</a></h4></li>
+
+            }
+         
+          
+        </ul>
+        </div>
+

@@ -1,0 +1,44 @@
+﻿		
+<div class="LayoutCatalogDiv" style="padding-top:30px">
+		@await Component.InvokeAsync("_CatalogList")
+		 </div>
+		  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Elan Axtarın</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form  asp-action="Search" asp-controller="Home" method="get" id="filters">
+          
+            <i class="fa-solid fa-location-dot" style="top:30px; left:-10px"></i>
+            <select name="City" asp-items="ViewBag.City" class="form-control" style="padding-left:30px">
+               
+                <option value="">Şəhər seçin</option>
+            </select>
+            <br>
+            <label>
+                <span style="margin-right:10px;">Qiymət</span>  
+                <input type="number" name="Min" class="InputMinWithMax" min="0" placeholder="min">-  
+                <input type="number" name="Max" class="InputMinWithMax" min="0" placeholder="maks">
+            </label>
+            <br>
+            <br>
+           <span  class="BtnCheapWithHighPrice" id="BtnCheapPrice">əvvəlcə ucuz</span>
+           <span class="BtnCheapWithHighPrice"  id="BtnHighPrice">əvvəlcə bahalı</span>
+           <input type="hidden" name="PriceStatus" id="inputCheapHighPrice">
+           <br>
+           <br>
+           <span  class="BtnCheapWithHighPrice"  id="BtnNewDate">əvvəlcə yeni</span>
+           <span class="BtnCheapWithHighPrice" id="BtnOldDate">əvvəlcə köhnə</span>
+           <input type="hidden" name="Date" id="inputNewOldDate"> 
+           <br>
+           <br>
+           <button class="btn btn-info form-control ">Axtarın </button>
+          </form>
+        </div>
+     
+      </div>
+    </div>
+  </div>

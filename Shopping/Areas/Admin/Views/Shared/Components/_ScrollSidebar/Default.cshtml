@@ -1,0 +1,36 @@
+﻿ <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                             href="/Home/AllProductPage" aria-expanded="false">
+                                <i class="me-3 fa fa-home" aria-hidden="true"></i><span
+                                    class="a">Baş Səyifə</span></a> </li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                               href="/Admin/Product/AllProducts" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                    aria-hidden="true"></i><span class="hide-menu">Bütün Elanlar</span></a></li>
+                       
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="#" aria-expanded="false">
+                                <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+                                    class="hide-menu">İstifadəçilər</span></a> </li>
+
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="/Admin/VerifiedProduct/PremiumAllList"  aria-expanded="false"><i class="me-3 fa fa-globe"
+                                    aria-hidden="true"></i><span class="hide-menu">Premium Elanlar</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                               href="/Admin/VerifiedProduct/VipAllList"  aria-expanded="false"><i class="me-3 fa fa-columns"
+                                    aria-hidden="true"></i><span class="hide-menu">Vip Elanlar</span></a></li>
+                     
+                        <li class="text-center p-20 upgrade-btn">
+                            <a asp-action="ProductAdd" asp-controller="Product" asp-area="Member"
+                                class="btn btn-priymary text-white mt-4" target="_blank" style="background:Green;"><b>+</b>Elanı Yerləştir
+                                </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>

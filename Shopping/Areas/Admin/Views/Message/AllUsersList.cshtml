@@ -1,0 +1,55 @@
+﻿@model List<EntityLayer.Concrete.AppUser>
+@{
+    ViewData["Title"] = "AllUsersList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/OperatorMessage_css/OperatorContact.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="OperatorContactContanier">
+<div class="OperatorContactViewDefault">
+    <div class="MessageTopNameDiv">
+    </div>
+   
+    <ul class="MessageUsers">
+        @foreach(var x in Model){
+     <li class="MessageUser">
+        <a href="/Admin/Message/IncomingMessages/@x.Id">
+        <img src="~/Shopping/MemberImg/@x.ImageUrl" alt="" class="MessageUserImg">
+        <b class="MessageUserName">@x.Name @x.SurName</b>
+
+    </a>
+    <hr>
+    </li> 
+        }
+  
+    
+    </ul>
+    <ul class="OperatorContactView">
+ 
+
+      
+    
+    </ul>
+    <div class="SendInputDiv">
+           <form method="post">
+        <input type="text"  class="SendInput" placeholder="Mesajiniz" required="">
+    <button  type="submit" class="SendButton" href="#"><i class="fa fa-paper-plane SendButtonIcon"></i> </button>
+</form>    
+</div>
+</div>
+    </div>
+    <script src="~/js/OperatorContact/OperatorContact.js"></script>
+</body>
+</html>

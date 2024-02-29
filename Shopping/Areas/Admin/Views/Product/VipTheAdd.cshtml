@@ -1,0 +1,34 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "VipTheAdd";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1 style="justify-content:center;">Elani Vip Etme</h1>
+<form>
+	<br /><br /><br />
+	Sahibin Adi
+	<input class="btn btn-outline-primary form-control" type="text" value="@Model.ProductOwnerName" /><br />
+	Elan Adi
+	@if (Model.ProductName != null)
+	{
+		<input class="form-control" type="text" value="@Model.ProductName" disabled /><br />
+	}
+	@if (Model.CarMake != null)
+	{
+			<input class="form-control" type="text" value="@Model.CarMake" disabled /><br />
+	   	<input class="form-control" type="text" value="@Model.ProductModel" /><br />
+
+	}
+
+	
+	Vip Status
+	<select class="form-select" multiple aria-label="multiple select example">
+  <option value="1">Gözlənilir</option>
+  <option value="2">Təsdiqlənmədi</option>
+  <option value="3">Təsdiqləndi</option>
+	</select>
+	<br /><br />
+	<button class="btn btn-outline-primary form-control" type="submit">Testiqle</button>
+
+</form>
+

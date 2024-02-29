@@ -1,0 +1,138 @@
+﻿@model AppUser
+@{
+	
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesab - @Model.UserName</title>
+<link rel="stylesheet" href="~/css/MemberProfile/MemberProfile.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="MemberProfileDiv">
+        <div class="MemberProfileTopBarDiv">
+            <div class="MemberProfileTopBar">
+				<img src="~/Shopping/MemberBigImg/@Model.BigImageUrl" class="MemberProfileBigImage" style="background-color:gray">
+             <ul class="BigImageWebSiteIconUl">
+					@if (Model.MemberSpecialWebSite != null)
+					{
+						<li class="BigImageWebSiteIconLi"><a href="@Model.MemberSpecialWebSite" class="BigImageWebSiteIconA Web">@Model.MemberSpecialWebSite</a></li>
+					}
+					@if (@Model.MemberFacebookWebSite != null)
+					{
+						<li class="BigImageWebSiteIconLi"><a href="@Model.MemberFacebookWebSite" class="BigImageWebSiteIconA Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+					}
+					@if (@Model.MemberInstagramWebSite != null)
+					{
+						<li class="BigImageWebSiteIconLi"><a href="@Model.MemberInstagramWebSite" class="BigImageWebSiteIconA Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+					}
+					@if (@Model.MemberTiktokWebSite != null)
+					{
+						<li class="BigImageWebSiteIconLi"><a href="@Model.MemberTiktokWebSite" class="BigImageWebSiteIconA Tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+
+					}
+				</ul>
+            </div>
+           
+            <div class="MemberProfileFooter">
+<div class="MemberProfileFooterImgNameDiv">
+<img src="~/Shopping/MemberImg/@Model.ImageUrl" class="MemberProfileSmallImage">
+    <b class="MemberProfileFooterName">@Model.Name @Model.SurName
+						@if (@Model.confirmed == "Təsdiqləndi")
+						{
+							<i class="fa-solid fa-circle-check MemberProfileConfirm"></i> <span class="Toolktip">Təsdiqləndi</span>
+						}
+						</b>
+</div>
+<div class="MemberProfileListUlDiv">
+                <ul class="MemberProfileListUl">
+                   
+                    <li class="MemberProfileListli MemberAllProduct"> Butun Elanlar</li>
+                    <li class="MemberProfileListli MemberVip">Vip Elanlar</li>
+                    <li class="MemberProfileListli ViewPopular">En Cox Baxilan</li>
+                    <li class="MemberProfileListli MemberPremium">Comment Elanlar</li>
+                    <li class="MemberProfileListli MemberDescription">Haqqinda</li>
+                  </ul>
+				  </div>
+
+          <div class="MemberProfileContentAllProduct MemberAllProductDiv">
+					@await Component.InvokeAsync("_ProfileAllProductList",new{id=ViewBag.UserId})
+            
+          </div>
+        <div class="MemberProfileContentVip MemberVipDiv" style="display:none">
+			@await Component.InvokeAsync("_ProfileVipProductList",new{id=ViewBag.UserId})
+        </div>
+        <div class="MemberProfileContentPopular MemberPopularDiv" style="display:none">
+            <h6>Burasi Popular Elanlar</h6>
+        </div>
+		 <div class="MemberProfileContentPremium MemberPremiumDiv" style="display:none">
+            <h6>Burasi Comment Elanlar</h6>
+        </div>
+        <div class="MemberProfileContentDescription MemberDescriptionDiv" style="display:none">
+        <div class="DescriptionDefault">
+           <ul class="Default">
+							<li>
+								<h6>Haqqinda</h6>
+								<p class="DescriptionP">@Model.MemberDescription</p>
+							</li>
+							<li>
+								<h4>Web Saytlar</h4>
+								@if (@Model.MemberSpecialWebSite != null)
+								{
+									
+							<li>Web Saytiniz<a href="@Model.MemberSpecialWebSite">@Model.MemberSpecialWebSite</a></li>
+
+								}
+								@if (@Model.MemberFacebookWebSite != null)
+								{
+									
+							<li>Facebook<a href="@Model.MemberFacebookWebSite">@Model.MemberFacebookWebSite</a></li>
+
+								}
+								@if (@Model.MemberInstagramWebSite != null)
+								{
+									
+								<li>Instagram<a href="@Model.MemberInstagramWebSite">@Model.MemberInstagramWebSite</a></li>
+
+								}
+								@if (@Model.MemberTiktokWebSite != null)
+								{
+									
+													<li>TikTok<a href="@Model.MemberTiktokWebSite">@Model.MemberTiktokWebSite</a></li>
+
+								}
+
+							</li>
+						</ul>
+       @if (User.Identity.IsAuthenticated)
+						{
+							@await Html.PartialAsync("~/Views/User/ProfileDescriptionUpdate.cshtml")
+						}
+        </div>
+
+@if(User.Identity.IsAuthenticated){
+					@await Component.InvokeAsync("_MemberProfileIsAuthenticated",new{id=@Model.Id})
+
+					}
+        </div>
+      
+        
+            </div>
+
+        </div>
+
+
+    </div>
+    <script src="~/js/MemberProfile/MemberProfile.js"></script>
+</body>
+</html>

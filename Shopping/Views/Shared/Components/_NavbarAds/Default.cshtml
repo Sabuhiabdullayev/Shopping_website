@@ -1,0 +1,33 @@
+﻿@model List<Ads>
+<div class="AdsLayoutDiv">
+    @foreach (var x in Model)
+   {
+       
+   
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img src="~/Shopping/NavbarAds/@x.Img1" class="d-block" alt="">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block"  role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
+              </div>
+              <div class="carousel-item active">
+                <img src="~/Shopping/NavbarAds/@x.Img2" class="d-block" alt="">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block "role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
+              </div>
+              <div class="carousel-item">
+                <img src="~/Shopping/NavbarAds/@x.Img3" class="d-block" alt="">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block "  role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          }
+    </div>
+    

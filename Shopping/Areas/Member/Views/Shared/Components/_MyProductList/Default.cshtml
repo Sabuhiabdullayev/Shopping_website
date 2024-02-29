@@ -1,0 +1,82 @@
+﻿
+@model IEnumerable<Product>
+
+<link rel="stylesheet" href="~/css/MyProductList/MyProductList.css">
+
+<div class="row">
+	@foreach (var x in Model)
+	{
+
+
+
+		<div class="card ProductListCard">
+			<button class="MyProductListMenuBtn">  <i class="fa-solid fa-ellipsis-vertical MyProductListMenuIcon"></i></button>
+			<div class="MyproductListSettingDiv">
+				<button class="MyProductListMenuBtn"> <i class="fa-regular fa-circle-xmark MyProductListMenuIcon"></i></button>
+				<a href="/Member/Product/Remove/@x.ProductId" onclick="return confirm('Elanı siləcəksəniz birdə bərpa olunmayacaqdır əminmisiniz.')" class="btn btn-outline-danger  MyProductListA"><i class="fa fa-trash MyProductListIcon"></i>Elani Sil</a><br>
+				<a href="/Member/Product/Update/@x.ProductId" class="btn btn-outline-info  MyProductListA"><i class="fa-solid fa-pen-to-square MyProductListIcon"></i>Düzənlə</a><br>
+				@if (x.MyProductStatus == "Active")
+				{
+					<form asp-action="MyProductStatusUpdate" asp-controller="Product" asp-area="Member" method="post">
+					<button class="btn btn-outline-warning  MyProductListA"><i class="fa-solid fa-pause MyProductListIcon"></i>Passiv Et</button>
+						<input type="hidden" name="ProductId" value="@x.ProductId" />
+						<input type="hidden" name="MyProductStatus" value="Passive" />
+				</form>
+					<br>
+
+				}
+				else if (x.MyProductStatus == "Passive")
+				{
+				   <form asp-action="MyProductStatusUpdate" asp-controller="Product" asp-area="Member" method="post">
+					<button class="btn btn-outline-success  MyProductListA"><i class="fa-solid fa-play MyProductListIcon"></i>Aktiv Et</button>
+						<input type="hidden" name="ProductId" value="@x.ProductId" />
+						<input type="hidden" name="MyProductStatus" value="Passive" />
+					</form>
+					<br>
+
+				}
+
+
+
+			</div>
+
+
+
+			<a href="/Product/Detail/@x.ProductId" class="DefaultProductList">
+				<img class="Img" src="~/Shopping/ProductImg/@x.Image1" alt="">
+				@if (x.ShopProductStatus == "Active")
+				{
+					<b class="ProductListShop">Mağaza</b>
+				}
+				@if(x.Vip=="Təsdiqləndi"){
+									<img class="ProductListVip" src="~/Shopping/VipPremium/Vip.png">
+				}
+				@if (x.Premium == "Təsdiqləndi")
+				{
+				<img class="ProductListPremium" src="~/Shopping/VipPremium/Premium.png">	
+				}
+				
+				<ul class="ProductListFooterDiv">
+					<li class="Price"><b><b>@x.Price @x.PriceCurrency</b></b></li>
+					@if (x.ProductName.Length>23)
+					{
+						<li><b>@x.ProductName.Substring(0,x.ProductName.Substring(0,23).LastIndexOf(" "))...</b></li>
+					}else{
+						<li><b>@x.ProductName</b></li>
+					}
+					<li>
+						Baxış: <i class="fa-solid fa-eye"></i>
+						@await Component.InvokeAsync("_MyProductListViewCount",new{id=x.ProductId})
+						@*<span style="margin-left:10px">bəyəni</span>
+							<i class="fas fa-thumbs-up"></i>
+							@await component.invokeasync("_myproductlistlikecount",new{id=x.productid})
+						*@
+					</li>
+					<li class="CityDate"><b class="ProductListCity">@x.City</b>    @x.Date </li>
+				</ul>
+			</a>
+		</div>
+	}
+</div>
+
+<script src="~/js/MyProductList/MyProductList.js"></script>

@@ -1,0 +1,434 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<AppUser>
+<HTML lang="en">
+
+    <!-- Credits: https://www.bootdey.com/snippets/view/chat-app -->
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>Siav.az</title>
+    
+        <!-- Font awesome 6 -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    
+        <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="~/css/AdminOperatorMessage/Chat.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+       
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card chat-app">
+                        <div id="plist" class="people-list">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary"><i
+                                    class="fas fa-user-plus"></i> Invite someone</button>
+                            </div>
+                            <div class="input-group mt10">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                            <ul class="list-unstyled chat-list mt-2 mb-0">
+                            @foreach(var x in Model){
+                           <li class="clearfix" data-id="@x.Id">
+                                    <img src="https://freelogopng.com/images/all_img/1681038242chatgpt-logo-png.png"
+                                        alt="avatar">
+                                    <div class="about">
+                                        <div class="name">@x.Name</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                </li>
+                            }
+                            </ul>
+                          @*  <ul class="list-unstyled chat-list mt-2 mb-0">
+                                <li class="clearfix">
+                                    <img src="https://freelogopng.com/images/all_img/1681038242chatgpt-logo-png.png"
+                                        alt="avatar">
+                                    <div class="about">
+                                        <div class="name">ChatGPT</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                </li>
+                                <li class="clearfix active">
+                                    <img src="https://w7.pngwing.com/pngs/821/381/png-transparent-computer-user-icon-peolpe-avatar-group.png"
+                                        alt="avatar">
+                                    <div class="about">
+                                        <div class="name">All</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online 5 </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Aiden Chavez</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Mike Thomas</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Christian Kelly</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Monica Ward</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> offline </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Dean Henry</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                    <div class="about-buttons mt5">
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-microphone"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-camera"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-desktop"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-upload"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fab fa-youtube"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                            </ul>*@
+                        </div>
+                        <div class="chat">
+                            <div class="chat-header clearfix">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a data-toggle="modal" data-target="#view_info">
+                                            <img src="https://w7.pngwing.com/pngs/821/381/png-transparent-computer-user-icon-peolpe-avatar-group.png"
+                                                alt="avatar">
+                                        </a>
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">Public chat group</h6>
+                                            <small>Participants: 5</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 hidden-sm text-end mt5">
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-map-pin"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-users"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-expand"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i
+                                                class="fas fa-circle-half-stroke"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i
+                                                class="fas fa-volume-high"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-save"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-history">
+                                 <ul class="m-b-0 MessageList" id="MessageList">
+                                 @*  <li class="clearfix">
+                                        <div class="message-data text-end">
+                                            <span class="message-data-time">10:10 AM, Today</span>
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right">
+                                            Hi Monica, how are you? How is the project coming along?
+                                            <div class="about-buttons mt5">
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-trash"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-paste"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-volume-high"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                            <span class="message-data-time">10:12 AM, Today</span>
+                                        </div>
+                                        <div class="message my-message">
+                                            Are we meeting today?
+                                            <div class="about-buttons mt5">
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-trash"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-paste"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-volume-high"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                            <span class="message-data-time">10:15 AM, Today</span>
+                                        </div>
+                                        <div class="message my-message">
+                                            Project has been already finished and I have results to show you.
+                                            <div class="about-buttons mt5">
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-trash"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-paste"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-volume-high"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                            <span class="message-data-time">10:15 AM, Today</span>
+                                        </div>
+                                        <div class="message my-message">
+                                            Project has been already finished and I have results to show you.
+                                            <div class="about-buttons mt5">
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-trash"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-paste"></i></button>
+                                                <button class="btn btn-outline-secondary btn-sm mr5"><i
+                                                        class="fas fa-volume-high"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>*@
+                                </ul>
+                            </div>
+                            <div class="chat-message clearfix">
+                                <div class="input-group mb-0">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text"><i class="fas fa-message"></i></span>
+                                        <textarea class="form-control" id="textContent" placeholder="Mesajınızı yazın..." rows="1"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt10">
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-smile"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fab fa-markdown"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-paperclip"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm"><i
+                                            class="fas fa-microphone-slash"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-paste"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-outline-secondary btn-sm float-right" id="messagesend"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+		<script type="text/javascript">
+        $(document).ready(function () {
+ 
+
+           $(".list-unstyled").on("click",".clearfix",function(){
+               var btn = $(this);
+               var btnid = btn.attr('data-id');
+                  $('#MessageList').children().remove();
+       MessageList();
+       setInterval(()=>{MessageList();},1000);
+
+       //Start Send Message 
+                $("#messagesend").click(function(){
+                    var content=($("textarea#textContent").val());
+                   let message={
+                    MessageOwnerId:btnid,
+                    ContactContent:content
+                };
+                 $.ajax({
+                    type:"post",
+                  url:"/Member/Message/Send/",
+                    data:message,
+                    success:function(func2){
+                        let result =jQuery.parseJSON(func2);
+                        $("textarea#textContent").val("");
+                    }
+                });
+            });    
+            //Stop Send Message
+
+        //Start List Message     
+     function MessageList(){
+      
+               let MessageId={
+              id:btnid
+               };
+                $.ajax({
+                 contentType:"application/json; charset=utf-8",
+                dataType:"json",
+                type:"Get",
+                url:"/Member/Message/MessageList/",
+               data:MessageId,
+                success:function(func2){
+                    let result =jQuery.parseJSON(func2);
+                    var tablehtml;
+                    $.each(result,(index,value)=>{
+                if(value.MessageOwnerId==btnid){
+              tablehtml+='<li class="clearfix"> <div class="message-data text-end">'+
+                                         '   <span class="message-data-time">10:10 AM, Today</span>'+
+                                          ' <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">'+
+                                      '  </div>'+
+                                    '    <div class="message other-message float-right">'+value.ContactContent+'<div class="about-buttons mt5">'+
+                                          '      <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                          '              class="fas fa-trash" data-id="'+value.ContactId+'"></i></button>'+
+                                           '     <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                              '          class="fas fa-paste"></i></button>'+
+                                           '     <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                                      '  class="fas fa-volume-high"></i></button>'+
+                                         '   </div> </div></li>'
+                }
+                if(value.AppUserId==btnid){
+               tablehtml+= '<li class="clearfix"> <div class="message-data">'+
+                                         '   <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">'+
+                                         '   <span class="message-data-time">10:12 AM, Today</span>'+
+                                      '  </div>'+
+                                      '  <div class="message my-message">  '+value.ContactContent+' <div class="about-buttons mt5">'+
+                                        '        <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                        '                class="fas fa-trash" data-id="'+value.ContactId+'"></i></button>'+
+                                        '        <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                         '               class="fas fa-paste"></i></button>'+
+                                          '      <button class="btn btn-outline-secondary btn-sm mr5"><i'+
+                                           '             class="fas fa-volume-high"></i></button>'+
+                                        '    </div> </div></li>'
+                }
+                    });
+                    
+                    $("#MessageList").html(tablehtml);
+                     
+                var scrolled=0;
+               var height= $("#MessageList").prop("scrollHeight")+1000;
+    scrolled=scrolled+height;
+
+    $(".MessageList").animate({
+        scrollTop:  scrolled
+    });
+
+    $("#MessageList").on("click",".fa-trash",function(){
+                        var btn=$(this);
+                        var btndelid =btn.attr("data-id");
+                        let delid ={
+                            id:btndelid
+                        };
+                        $.ajax({
+                            type:"delete",
+                            url:"/Member/Message/MessageDel/",
+                            data:delid,
+                            success:function(func){
+                                btn.parent().parent().parent().parent().remove();
+                            }
+                        });
+                    });
+                     }
+                });
+             };
+
+//Stop List Message
+    });      
+});
+        </script>
+    </body>
+    </html>
+
+
+ 

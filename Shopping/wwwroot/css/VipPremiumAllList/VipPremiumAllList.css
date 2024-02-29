@@ -1,0 +1,40 @@
+
+body{
+    margin: 0%;
+    padding: 0%;
+   
+}
+.VipPremiumAllListTopbarDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(210, 206, 200);
+    
+}
+.VipPremiumAllListTopbarAllList{
+    position: relative;
+    width: 1200px;
+    height: 80px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(210, 206, 200);
+}
+.VipPremiumAllListTopbar{
+    position: relative;
+   margin-left: 10%;
+    background-color: rgb(210, 206, 200);
+}
+
+
+.VipPremiumAllList{
+    width: 1200px;
+    height: 80px;
+    /* left: 50%;
+    transform: translate(-50%); */
+    height: 100%;
+    background-color: rgb(210, 206, 200);
+}
+
+#ApprovedDiv,#ConfirmationpancakeDiv,#NotapprovedDiv{
+    display: none;
+}

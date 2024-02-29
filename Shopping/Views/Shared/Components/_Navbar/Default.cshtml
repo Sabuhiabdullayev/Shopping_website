@@ -1,0 +1,71 @@
+﻿<div class="Navbar">
+	<div class="LayoutBarsIconDiv">
+		<i class="fa-solid fa-bars LayoutBarsIcon"></i>
+	</div>
+	<div class="LogoDiv"><a href="/Home/AllProductPage/" class="LogoName"><b>Siav.az</b></a></div>
+	<img class="LayoutCatalogShowIcon" src="~/Shopping/LayoutCatalogImg/CatalogIcon.png" alt="">
+
+	<form asp-action="Search" asp-controller="Home" asp-area=null method="get" id="filter" class="LayoutSearchForm">
+
+		<div class="CategoryDiv">
+			<select asp-items="ViewBag.Catalog" name="Catalog" class="AllCategory">
+				<option value="">Katalog</option>
+
+			</select>
+		</div>
+
+		<div class="SearchDiv">
+			<input type="search" name="Search" class="SearchInput" value="@ViewData["CurrentFilter"]" placeholder="Axtaracağınız məhsul adı....">
+			<div class="SearchCity">
+				<i class="fa-solid fa-location-dot"></i>
+				<select name="City" id="city" asp-items="ViewBag.City" class="CitySelect">
+					<option value=""><b> Şəhər</b></option>
+				</select>
+			</div>
+			<button type="submit" class="SearchButton"> <i class="fa fa-search SearchIcon"></i></button>
+
+		</div>
+	</form>
+	<div class="ProductAddDiv">
+		@if (User.Identity.IsAuthenticated)
+		{
+			<a  class="btn btn-outline-success ProductAdd"><i class="fa fa-plus ProductAddPlus"></i> <b class="ProductAddName">Elan Yerləşdir</b></a>
+
+		}
+		else
+		{
+			 
+			<a type="submit" class="btn btn-outline-success ProductAdd"><i class="fa fa-plus ProductAddPlus"></i> <b class="ProductAddName">Elan Yerləşdir</b></a>
+
+		}
+	</div>
+	 <div class="PrivateWithShopProductAddDiv">
+  <a href="/Member/Product/ProductAdd/" class="btn btn-warning PrivateProductAdd"><i class="fa fa-plus"></i>Hesaba  Yerləşdir</a>
+  <a href="/Member/Shop/ProductAdd/" class="btn btn-warning PrivateProductAdd"><i class="fa fa-plus"></i>Mağazaya  Yerləşdir</a>
+
+ </div>
+	<div class="ProductSelect">
+		@if (User.Identity.IsAuthenticated)
+		{
+			@await Component.InvokeAsync("_LayoutMySelectedProductCount")
+			<a href="/Member/Cart/Selected"><i class="fa-regular fa-heart SelectIcon"></i></a>
+		}else{
+            <a href="#"><i class="fa-regular fa-heart SelectIcon"></i></a>
+		}
+		
+	</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+			   jQuery(document).ready(function($){
+	          $("#filter").submit(function(){
+				  $(this).find(":input").filter(function(){return !this.value;}).attr("disabled","disabled");
+			 return true;
+			  });
+			  $("form").find(":input").prop("disabled",false);
+			   });
+
+
+</script>

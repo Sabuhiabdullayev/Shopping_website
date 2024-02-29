@@ -1,0 +1,92 @@
+﻿@model List<Notification>  
+<form asp-action="AllDelete" asp-controller="Notification" asp-area="Member" method="post">
+    <b>Bütün Bildiriş Sayısı <span >(@Model.Count())</span><button class="btn btn-outline-danger" style="margin-left:10px">Hamını Təmizlə</button></b>
+    <input type="hidden" name="count" value="@Model.Count()"/>
+</form>
+     
+
+@foreach(var x in Model)
+{
+            @if (x.NotificationStatus == true)
+            {
+                <li class="NotificationListLi" style=" background-color: rgb(206, 206, 206);">
+
+        <form asp-action="NotificationStatusFalse" asp-controller="Notification" asp-area="Member" method="post">
+
+              <input type="hidden" value="@x.NotificationId" name="id" />  
+                       <button class="NotificationContentShowBtn" data-id="@x.NotificationId">
+                 @if(x.Like==true || x.Comment == true)
+                            {
+                <img src="~/Shopping/MemberImg/@x.AppUser.ImageUrl" alt="" class="NotificationSenderImage">  
+           <a href="/User/Profile/@x.AppUser.UserName" class="NotificationSenderName">@x.AppUser.Name @x.AppUser.SurName </a>
+                    @if (x.AppUser.confirmed == "Təsdiqləndi")
+                    {
+                <i class="fa-solid fa-circle-check NotificationSenderConfirmed"></i>
+                    }
+                    <p class="NotificationSenderContent">
+                        @if (!string.IsNullOrEmpty(x.Img))
+                        {
+                            <img src="~/Shopping/NotificationImg/@x.Img" class="NotificationPostedImage" alt="Bos">
+                        }
+                        <a href="/Product/Detail/@x.ProductId" class="NotificationContentProductName">@x.ProductName</a> @x.Title
+                        @if (x.Like == true)
+                        {
+                            <i class="fa-regular fa-thumbs-up NotificationContentSenderIcon"></i>
+                        }else if (x.Comment == true)
+                        {
+             <i class="fa-regular fa-comment NotificationContentSenderIcon"></i>
+
+                        }
+                    </p>
+                            }
+   </button>
+            </form>
+             <span class="NotificationSenderDate">@(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</span>  
+       <button class="btn btn-outline-danger NotificationRemove" data-id="@x.NotificationId"><i class="fa-solid fa-trash"></i></button>
+   </li>    
+   }
+        else
+        {
+                            <li class="NotificationListLi">
+
+             <form asp-action="NotificationStatusFalse" asp-controller="Notification" asp-area="Member" method="post">
+
+              <input type="hidden" value="@x.NotificationId" name="id" />  
+                       <button class="NotificationContentShowBtn" data-id="@x.NotificationId" style="background:transparent">
+                 @if(x.Like==true || x.Comment == true)
+                            {
+                <img src="~/Shopping/MemberImg/@x.AppUser.ImageUrl" alt="" class="NotificationSenderImage">  
+           <a href="/User/Profile/@x.AppUser.UserName" class="NotificationSenderName">@x.AppUser.Name @x.AppUser.SurName </a>
+                    @if (x.AppUser.confirmed == "Təsdiqləndi")
+                    {
+                <i class="fa-solid fa-circle-check NotificationSenderConfirmed"></i>
+                    }
+                    <p class="NotificationSenderContent">
+                        @if (!string.IsNullOrEmpty(x.Img))
+                        {
+                            <img src="~/Shopping/NotificationImg/@x.Img" class="NotificationPostedImage" alt="Bos">
+                        }
+                        <a href="/Product/Detail/@x.ProductId" class="NotificationContentProductName">@x.ProductName</a> @x.Title
+                        @if (x.Like == true)
+                        {
+                            <i class="fa-regular fa-thumbs-up NotificationContentSenderIcon"></i>
+                        }else if (x.Comment == true)
+                        {
+             <i class="fa-regular fa-comment NotificationContentSenderIcon"></i>
+
+                        }
+                    </p>
+                            }
+   </button>
+      
+            </form>
+             <span class="NotificationSenderDate">@(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</span>  
+       <button class="btn btn-outline-danger NotificationRemove" data-id="@x.NotificationId"><i class="fa-solid fa-trash"></i></button>
+     </li>  
+   }
+
+    } 
+                     
+   
+  
+   <script src="~/js/Notificationjs/Ajax.js"></script>

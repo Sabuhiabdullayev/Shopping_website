@@ -1,0 +1,36 @@
+﻿
+@model Notification
+@{
+    ViewData["Title"] = "NotificationSend";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+<div class="mr-5 ml-5">
+<form asp-action="UpdateNotification" asp-controller="Notification" asp-Area="Admin" method="post" enctype="multipart/form-data"> 
+<div class="form-group">
+	<label>Basliq</label>
+	<input type="text" name="Title" value="@Model.Title" class="form-control" />
+</div>
+<div class="form-group">
+	<label>Metin</label>
+	<input type="text" name="Content" value="@Model.Content" class="form-control" />
+</div>
+<div class="form-group">
+	<label>Sekil</label>
+	<input type="file" name="Img" value="@Model.Img" class="form-control" />
+			<br />
+			<img src="~/Shopping/NotificationImg/@Model.Img" style="height:120px" class="form-control" alt="" />
+</div>
+<div class="form-group">
+	<label>Member id</label>
+	<input type="text" name="MemberId" value="@Model.MemberId" class="form-control" disabled/>
+</div>
+<div class="form-group">
+	<button class="btn btn-outline-primary">Gonder</button>
+</div>
+</form>
+</div>
+
+
+
+

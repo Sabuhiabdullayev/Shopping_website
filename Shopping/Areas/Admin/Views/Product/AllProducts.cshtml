@@ -1,0 +1,181 @@
+﻿
+@model List<Product>
+@{
+    
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet/>
+<div class="mr-4 ml-4">
+
+<div class="form-group ">
+
+</div>
+<button type="button" class="btn btn-text" style="float:right" data-toggle="modal" data-target="#exampleModalLong">
+  <i class="fa-solid fa-filter"></i>
+</button>
+<h5>Bütün Elanlar</h5>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Elan Axtarma Paneli</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		             <form asp-action="Search" asp-controller="Product" asp-area="Admin" method="get"  id="filters" class="form-group">
+						<label>Şəhər Adı</label>
+					<select name="City" asp-items="ViewBag.City" class="form-control"></select>
+					<label>Elan Adı</label>
+					<input type="text" name="ProductName" class="form-control" />
+						<label>Tarixdən</label>
+					<input type="date" name="DateMin" class="form-control" />
+						<label>Tarixə Kimi</label>
+					<input type="date" class="form-control" />
+						<label>Qiymət Min</label>
+						<input type="number" name="PriceMin" value="" class="form-control"/>
+							<label>Qiymət Max</label>
+						<input type="number" value="" name="PriceMax" class="form-control"/>
+					<label>Elan Status</label>
+					<select name="Status"  class="form-control">
+						<option></option>
+						<option value="Aktiv">Aktiv Olan</option>
+						<option value="DeAktiv">Qeyri Aktiv</option>
+					</select>
+					<br />
+					<button class="form-control"><i class="fas fa-search" style="margin-right:5px"></i>Axtar</button>
+				
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table table-bordered tblProduct" id="tbtAllProduct"> 
+	<tr>
+		<th>Elan Nömrəsi</th>
+		<th>Şəkil</th>
+		<th>Elan Adı</th>
+		<th>Sahibi</th>
+		<th>Qiymet</th>
+		<th>Şəhər</th>
+		<th>Tarixi</th>
+		<th>Status</th>
+		<th>Vip</th>
+		<th>Premium</th>
+		<th>Elanı Sil</th>
+    </tr>
+	@foreach (var item in Model)
+	{
+		@if(item.ProductStatus == "Active")
+		{
+			<tr >
+		<td>@item.ProductId</td>
+		<td><img src="~/Shopping/ProductImg/@item.Image1" style="width:70px"/></td>
+		<td>@item.ProductName</td>
+		@*<td>@item.ProductOwnerName</td>*@
+			<td>@item.Price</td>
+		<td>@item.City</td>
+		<td>@*@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))*@
+			@item.Date
+		</td>
+		
+		<td>
+			<form asp-action="ProductStatus" asp-controller="Product" asp-area="Admin" method="post">
+			<input type="hidden" name="ProductId" value="@item.ProductId" />
+					<input type="hidden" name="ProductStatus" value="Passive" />
+				<button class="btn btn-outline-warning">Passiv Et</button>
+		</form>
+		</td>
+
+		<td>@item.Vip</td>
+		<td>@item.Premium</td>
+<td><a class="btn btn-outline-danger btnDelete" data-id="@item.ProductId"><i class="fa fa-trash "></i></a></td>
+    </tr>
+		}
+		@if(item.ProductStatus == "Passive")
+		{
+			<tr class="table table-danger">
+		<td>@item.ProductId</td>
+		<td><img src="~/Shopping/ProductImg/@item.Image1" style="width:70px"/></td>
+    	<td>@item.ProductName</td>
+		<td>@item.ProductOwnerName</td>
+			<td>@item.Price</td>
+		<td>@item.City</td>
+		<td>			@item.Date</td>
+		
+		<td>
+			<form asp-action="ProductStatus" asp-controller="Product" asp-area="Admin" method="post">
+			<input type="hidden" name="ProductId" value="@item.ProductId" />
+					<input type="hidden" name="ProductStatus" value="Active" />
+				<button class="btn btn-outline-success">Aktiv Et</button>
+		</form>
+		</td>
+
+		<td>@item.Vip</td>
+		<td>@item.Premium</td>
+	
+		<td><a class="btn btn-outline-danger btnDelete" data-id="@item.ProductId"><i class="fa fa-trash "></i></a></td>
+    </tr>
+		}
+		
+
+	}
+
+</table>
+
+</div>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+			   jQuery(document).ready(function($){
+				$(".tblProduct").DataTable();
+	          $("#filters").submit(function(){
+				  $(this).find(":input").filter(function(){return !this.value;}).attr("disabled","disabled");
+			 return true;
+			  });
+			  $("form").find(":input").prop("disabled",false);
+			   });
+			   $("#tbtAllProduct").on("click",".btnDelete",function(){
+				   var delbtn=$(this);
+
+				
+
+
+				  Swal.fire({
+  title: 'Elanı Siləcəkmisiniz?',
+  text: "Elanı silsəniz birdə bərpa olunmayacaqdır əminsinizmi!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Bəli!'
+}).then((result) => {
+  if (result.isConfirmed) {
+	  				   var id= delbtn.data("id");
+
+                       $.ajax({
+				   url:"/Admin/Product/Delete/"+id,
+				   type:"post",
+				   success:function(){
+					  delbtn.parent().parent().remove();
+					  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Elan Silinmişdir',
+  showConfirmButton: false,
+  timer: 1500
+})
+				   }
+				   });
+  }
+})
+			   });
+
+</script>
